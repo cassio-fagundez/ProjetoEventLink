@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProjetoEventLink</string>
+
+    <!-- Títulos -->
+    <string name="title_login">Login</string>
+    <string name="title_register">Register</string>
+    <string name="title_welcome">Welcome</string>
+    <string name="ask_language">Choose your language</string>
+
+    <!-- Botones -->
+    <string name="button_login">Login</string>
+    <string name="button_register">Register</string>
+    <string name="button_continue">Continue</string>
+
+    <!-- EditText -->
+    <string name="edittext_email">Email address</string>
+    <string name="edittext_password">Password</string>
+
+    <!-- Mensajes -->
+    <string name="message_forgetpassword">Forgot your password?</string>
+    <string name="message_welcome">Welcome to EventLink!</string>
+    <string name="message_login_success">Login successful!</string>
+    <string name="message_register_success">Registration successful!</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ProjetoEventLink" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/black</item> <!-- Puedes ajustar este color según tu preferencia -->
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Theme.ProjetoEventLink" parent="Base.Theme.ProjetoEventLink" />
+</resources>
