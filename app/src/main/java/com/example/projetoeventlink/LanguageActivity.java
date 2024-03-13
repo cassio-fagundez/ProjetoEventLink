@@ -21,7 +21,6 @@ public class LanguageActivity extends AppCompatActivity {
 
         Button btnSpanish = findViewById(R.id.btnSpanish);
         Button btnPortuguese = findViewById(R.id.btnPortuguese);
-        Button btnEnglish = findViewById(R.id.btnEnglish);
 
         btnSpanish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,13 +38,6 @@ public class LanguageActivity extends AppCompatActivity {
             }
         });
 
-        btnEnglish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setLocale("en");
-                openNextActivity();
-            }
-        });
     }
 
     private void setLocale(String languageCode) {
@@ -61,7 +53,7 @@ public class LanguageActivity extends AppCompatActivity {
     }
 
     private void openNextActivity() {
-        Intent intent = new Intent(this, LogInActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }

@@ -22,4 +22,14 @@
     <string name="message_welcome">Bem-vindo ao EventLink!</string>
     <string name="message_login_success">Login bem sucedido!</string>
     <string name="message_register_success">Registro bem sucedido!</string>
+
+    <!-- Campos -->
+    <string name="field_first_name">(*) PRIMEIRO NOME</string>
+    <string name="field_second_name">SEGUNDO NOME</string>
+    <string name="field_first_last_name">(*) PRIMEIRO SOBRENOME</string>
+    <string name="field_second_last_name">SEGUNDO SOBRENOME</string>
+    <string name="field_email">(*) E-MAIL</string>
+    <string name="field_date_of_birth">(*) DATA DE NASCIMENTO</string>
+    <string name="field_document_id">(*) CPF (BR) OU C.I (UY)</string>
+
 </resources>

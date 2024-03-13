@@ -17,8 +17,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Lenguaje por defecto.
-        setDefaultLanguage("es");
+        // Verificar si ya se ha configurado un idioma previamente
+        String savedLanguage = getSavedLanguage();
+        if (savedLanguage == null) {
+            // Configurar el idioma por defecto
+            setDefaultLanguage("es");
+        }
 
         // Botón Idioma
         Button buttonLanguage = findViewById(R.id.buttonLanguage);
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Aquí inicia la actividad de Bienvenida
-                startActivity(new Intent(MainActivity.this, LogInActivity.class));
+                startActivity(new Intent(MainActivity.this, WelcomeActivity.class));
             }
         });
 
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Aquí inicia la actividad de Login
-                startActivity(new Intent(MainActivity.this, LogInActivity.class));
+                startActivity(new Intent(MainActivity.this, SignInActivity.class));
             }
         });
 
@@ -57,9 +61,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Aquí inicia la actividad de Register
-                startActivity(new Intent(MainActivity.this, LogInActivity.class));
+                startActivity(new Intent(MainActivity.this, SignUpActivity.class));
             }
         });
+    }
+
+    private String getSavedLanguage() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        return preferences.getString("LANGUAGE", null);
     }
 
     private void setDefaultLanguage(String languageCode) {

@@ -3,23 +3,34 @@
     <string name="app_name">ProjetoEventLink</string>
 
     <!-- Títulos -->
-    <string name="title_login">Login</string>
-    <string name="title_register">Register</string>
-    <string name="title_welcome">Welcome</string>
-    <string name="ask_language">Choose your language</string>
+    <string name="title_login">Iniciar sesión</string>
+    <string name="title_register">Registrarse</string>
+    <string name="title_welcome">Bienvenido</string>
+    <string name="ask_language">Escoge tu lenguaje</string>
+
 
     <!-- Botones -->
-    <string name="button_login">Login</string>
-    <string name="button_register">Register</string>
-    <string name="button_continue">Continue</string>
+    <string name="button_login">Iniciar sesión</string>
+    <string name="button_register">Registrarse</string>
+    <string name="button_continue">Continuar</string>
 
     <!-- EditText -->
-    <string name="edittext_email">Email address</string>
-    <string name="edittext_password">Password</string>
+    <string name="edittext_email">Correo electrónico</string>
+    <string name="edittext_password">Constraseña</string>
 
     <!-- Mensajes -->
-    <string name="message_forgetpassword">Forgot your password?</string>
-    <string name="message_welcome">Welcome to EventLink!</string>
-    <string name="message_login_success">Login successful!</string>
-    <string name="message_register_success">Registration successful!</string>
+    <string name="message_forgetpassword">¿Olvidaste tu contraseña?</string>
+    <string name="message_welcome">¡Bienvenido a EventLink!</string>
+    <string name="message_login_success">¡Inicio de sesión exitoso!</string>
+    <string name="message_register_success">¡Registro exitoso!</string>
+
+    <!-- Campos -->
+    <string name="field_first_name">(*) PRIMER NOMBRE</string>
+    <string name="field_second_name">SEGUNDO NOMBRE</string>
+    <string name="field_first_last_name">(*) PRIMER APELLIDO</string>
+    <string name="field_second_last_name">SEGUNDO APELLIDO</string>
+    <string name="field_email">(*) CORREO ELECTRÓNICO</string>
+    <string name="field_date_of_birth">(*) FECHA DE NACIMIENTO</string>
+    <string name="field_document_id">(*) CÉDULA DE IDENTIDAD (UY) O CPF (BR)</string>
+
 </resources>

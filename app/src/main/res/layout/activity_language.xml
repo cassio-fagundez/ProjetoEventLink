@@ -43,13 +43,4 @@
         android:backgroundTint="#02592e"
         android:layout_marginBottom="16dp"/>
 
-    <Button
-        android:id="@+id/btnEnglish"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="English"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#7f1e24"
-        android:layout_marginBottom="16dp"/>
-
 </LinearLayout>
