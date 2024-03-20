@@ -29,8 +29,17 @@
     <string name="field_second_name">SEGUNDO NOMBRE</string>
     <string name="field_first_last_name">(*) PRIMER APELLIDO</string>
     <string name="field_second_last_name">SEGUNDO APELLIDO</string>
+    <string name="field_gender">(*) GÉNERO</string>
+    <string name="field_genderM">Masculino</string>
+    <string name="field_genderF">Femenino</string>
+    <string name="field_genderO">Otro</string>
     <string name="field_email">(*) CORREO ELECTRÓNICO</string>
+    <string name="field_password">(*) CONSTRASEÑA</string>
+    <string name="field_show_password">Mostrar contraseña</string>
     <string name="field_date_of_birth">(*) FECHA DE NACIMIENTO</string>
     <string name="field_document_id">(*) CÉDULA DE IDENTIDAD (UY) O CPF (BR)</string>
+
+    <!-- Toast -->
+    <string name="toast_completeall">Por favor, complete todos los datos obligatorios.</string>
 
 </resources>

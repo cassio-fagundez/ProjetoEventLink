@@ -28,8 +28,19 @@
     <string name="field_second_name">SEGUNDO NOME</string>
     <string name="field_first_last_name">(*) PRIMEIRO SOBRENOME</string>
     <string name="field_second_last_name">SEGUNDO SOBRENOME</string>
+    <string name="field_gender">(*) GÊNERO</string>
+    <string name="field_genderM">Masculino</string>
+    <string name="field_genderF">Femenino</string>
+    <string name="field_genderO">Outro</string>
     <string name="field_email">(*) E-MAIL</string>
+    <string name="field_password">(*) SENHA</string>
+    <string name="field_show_password">Ver senha</string>
     <string name="field_date_of_birth">(*) DATA DE NASCIMENTO</string>
     <string name="field_document_id">(*) CPF (BR) OU C.I (UY)</string>
+
+
+    <!-- Toast -->
+    <string name="toast_completeall">Por favor, preencha todos os campos obrigatórios.</string>
+
 
 </resources>

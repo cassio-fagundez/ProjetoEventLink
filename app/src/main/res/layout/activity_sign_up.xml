@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="@color/white"
     tools:context=".SignUpActivity">
 
     <LinearLayout
@@ -15,30 +16,38 @@
 
         <!-- Título "Registrarse" -->
         <TextView
-            android:id="@+id/textViewTitle"
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
             android:text="@string/title_register"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp"/>
+            android:textStyle="bold" />
 
         <!-- Campo de Primer Nombre -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/field_first_name"
             android:textColor="@android:color/black"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/etFirstName"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_marginBottom="16dp"/>
+            app:endIconMode="none">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Campo de Segundo Nombre -->
         <TextView
@@ -46,15 +55,21 @@
             android:layout_height="wrap_content"
             android:text="@string/field_second_name"
             android:textColor="@android:color/black"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/etSecondName"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_marginBottom="16dp"/>
+            app:endIconMode="none">
+
+            <EditText
+                android:id="@+id/etSecondName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Campo de Primer Apellido -->
         <TextView
@@ -62,15 +77,22 @@
             android:layout_height="wrap_content"
             android:text="@string/field_first_last_name"
             android:textColor="@android:color/black"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/etFirstLastName"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_marginBottom="16dp"/>
+            app:endIconMode="none">
+
+            <EditText
+                android:id="@+id/etFirstLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Campo de Segundo Apellido -->
         <TextView
@@ -78,15 +100,22 @@
             android:layout_height="wrap_content"
             android:text="@string/field_second_last_name"
             android:textColor="@android:color/black"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/etSecondLastName"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_marginBottom="16dp"/>
+            app:endIconMode="none">
+
+            <EditText
+                android:id="@+id/etSecondLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="textPersonName" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Campo de Email -->
         <TextView
@@ -94,15 +123,88 @@
             android:layout_height="wrap_content"
             android:text="@string/field_email"
             android:textColor="@android:color/black"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/etEmail"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_marginBottom="16dp"/>
+            app:endIconMode="none">
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo de Constraseña -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/field_password"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="password_toggle">
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo de Género -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/field_gender"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:id="@+id/rgGender"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbtnGenderM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/field_genderM"
+                android:textSize="15dp" />
+
+            <RadioButton
+                android:id="@+id/rbtnGenderF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/field_genderF"
+
+                android:textSize="15dp" />
+
+            <RadioButton
+                android:id="@+id/rbtnGenderO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="@string/field_genderO"
+
+                android:textSize="15dp" />
+
+        </RadioGroup>
 
         <!-- Campo de Fecha de Nacimiento -->
         <TextView
@@ -110,46 +212,34 @@
             android:layout_height="wrap_content"
             android:text="@string/field_date_of_birth"
             android:textColor="@android:color/black"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
-        <!-- Campo de Fecha de Nacimiento -->
-        <EditText
-            android:id="@+id/etDateOfBirth"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:focusable="false"
-            android:backgroundTint="@color/colorPrimary"
-            android:drawableEnd="@drawable/ic_calendar"
-            android:layout_marginBottom="16dp"/>
+            app:endIconMode="none">
 
+            <EditText
+                android:id="@+id/etDateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:focusable="false" />
 
-        <!-- Campo de Cédula de Identidad o CPF -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/field_document_id"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"/>
-
-        <EditText
-            android:id="@+id/etDocumentId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_marginBottom="16dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Botón de Registro -->
         <Button
-            android:id="@+id/buttonRegister"
+            android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_register"
-            android:textColor="@android:color/white"
-            android:background="@color/colorAccent"
-            android:layout_marginTop="16dp"
             android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"/>
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/button_register"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 </ScrollView>
