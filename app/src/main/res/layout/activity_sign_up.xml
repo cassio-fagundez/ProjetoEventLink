@@ -158,11 +158,22 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+
                 android:backgroundTint="@color/colorPrimary"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvPasswordMistake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/red"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            />
 
         <!-- Campo de Género -->
         <TextView

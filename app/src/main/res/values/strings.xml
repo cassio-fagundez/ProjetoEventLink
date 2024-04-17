@@ -8,7 +8,6 @@
     <string name="title_welcome">Bienvenido</string>
     <string name="ask_language">Escoge tu lenguaje</string>
 
-
     <!-- Botones -->
     <string name="button_login">Iniciar sesión</string>
     <string name="button_register">Registrarse</string>
@@ -39,7 +38,16 @@
     <string name="field_date_of_birth">(*) FECHA DE NACIMIENTO</string>
     <string name="field_document_id">(*) CÉDULA DE IDENTIDAD (UY) O CPF (BR)</string>
 
-    <!-- Toast -->
+    <!-- Toast y Errores -->
     <string name="toast_completeall">Por favor, complete todos los datos obligatorios.</string>
+    <string name="error_weakpassword">Error: Su contraseña es demasiado débil. Para que su contraseña sea aceptada esta debe contener:\n
+         - Al menos 6 caracteres\n
+         - Al menos una letra del alfabeto mayúscula.\n
+         - Al menos una letra del alfabeto en minúscula.\n
+         - Al menos un número.\n
+         - Al menos un símbolo.</string>
+    <string name="error_invalid_email">Su correo es inválido o ya está en uso, por favor ingrese otro.</string>
+    <string name="error_used_email">Ya existe otro usuario con este email, por favor use otro.</string>
+
 
 </resources>
