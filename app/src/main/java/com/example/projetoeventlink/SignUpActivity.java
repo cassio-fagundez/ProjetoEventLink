@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.projetoeventlink.Logica.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -26,6 +27,9 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
@@ -36,7 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
     private RadioButton rbtnSelected;
     private RadioGroup rgGender;
     private Button btnRegister;
-    private static final String TAG = "SignUp Activity";
+    private static final String TAG = "LOGSignUpActivity";
 
 
     @Override
@@ -121,20 +125,46 @@ public class SignUpActivity extends AppCompatActivity {
                 new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d(TAG, "onComplete Authenticator called");
                         if (task.isSuccessful()){
                             Toast.makeText(SignUpActivity.this, getString(R.string.message_register_success), Toast.LENGTH_LONG).show();
                             FirebaseUser firebaseUser = auth.getCurrentUser();
 
-                            // Enviar email de verificacion.
-                            firebaseUser.sendEmailVerification();
+                            // Guardar datos del usuario (no correo ni contraseña) en Firebase Realtime Database
+                            Usuario writeUsuario = new Usuario(names,lastNames,Character.toString(gender),birthDate);
 
-                            // Abrir perfil del usuario luego del registro.
-                            Intent intent = new Intent(SignUpActivity.this, WelcomeActivity.class);
+                            // Referencia al usuario registrado (Si no existe, la crea).
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference referenceProfile = database.getReference("Registered Users");
 
-                            //Esto cierra por completo las anteriores activity al momento de abrir la nueva, haciendo imposible regresar al registro una vez que lo haya completado.
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                            finish(); // Aquí se cierra la Activity de registro.
+                            referenceProfile.child(firebaseUser.getUid()).setValue(writeUsuario).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Log.d(TAG, "onComplete RealtimeDatabase called");
+
+                                    if (task.isSuccessful()){
+                                        Log.d(TAG, "RealtimeDatabase write successful");
+                                        // Enviar email de verificacion.
+                                        firebaseUser.sendEmailVerification();
+
+                                        Toast.makeText(SignUpActivity.this, R.string.toast_emailverification, Toast.LENGTH_LONG).show();
+
+                                    // Abrir perfil del usuario luego del registro.
+                                    Intent intent = new Intent(SignUpActivity.this, WelcomeActivity.class);
+
+                                    //Esto cierra por completo las anteriores activity al momento de abrir la nueva, haciendo imposible regresar al registro una vez que lo haya completado.
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                    finish(); // Aquí se cierra la Activity de registro.
+
+                                    }else{
+                                        Exception e = task.getException();
+                                        Log.e(TAG, "Error al escribir en la base de datos en tiempo real", e);
+                                    }
+
+
+                                }
+                            });
 
                         } else {
                             tvPasswordMistake.setVisibility(View.VISIBLE);

@@ -41,6 +41,7 @@
 
     <!-- Toast e erros -->
     <string name="toast_completeall">Por favor, preencha todos os campos obrigatórios.</string>
+    <string name="toast_emailverification">Você se cadastrou com sucesso, por favor verifique seu e-mail.</string>
     <string name="error_weakpassword">Erro: Sua senha é muito fraca. Para que sua senha seja aceita, ela deve conter:\n
          - Pelo menos 6 caracteres.\n
          - Pelo menos uma letra maiúscula do alfabeto.\n
@@ -49,6 +50,8 @@
          - Pelo menos um símbolo.</string>
     <string name="error_invalid_email">Seu e-mail é inválido ou já está em uso, por favor insira outro.</string>
     <string name="error_used_email">Já existe outro usuário com este e-mail, por favor use outro.</string>
+    <string name="error_register_failed">O registro falhou, por favor tente novamente.</string>
+
 
 
 
