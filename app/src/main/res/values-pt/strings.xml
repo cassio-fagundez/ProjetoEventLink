@@ -39,9 +39,29 @@
     <string name="field_document_id">(*) CPF (BR) OU C.I (UY)</string>
 
 
-    <!-- Toast e erros -->
-    <string name="toast_completeall">Por favor, preencha todos os campos obrigatórios.</string>
-    <string name="toast_emailverification">Você se cadastrou com sucesso, por favor verifique seu e-mail.</string>
+    <!-- Alertas -->
+    <string name="email_required">E-mail necessário</string>
+    <string name="password_required">Senha necessária</string>
+    <string name="valid_email_required">É necessário um e-mail válido.</string>
+    <string name="error_login_failed_email">Não existe uma conta com este email.</string>
+    <string name="error_login_failed_password">A senha é inválida, por favor verifique.</string>
+
+
+
+    <!-- Toast y Errores -->
+    <string name="toast_completeall">Por favor, preencha todos os dados obrigatórios.</string>
+    <string name="toast_emailverification">Registrado com sucesso, por favor verifique seu e-mail.</string>
+    <string name="toast_writeemail">Por favor, insira seu e-mail.</string>
+    <string name="toast_writepassword">Por favor, insira sua senha.</string>
+    <string name="toast_rewriteemail">Verifique seu e-mail.</string>
+    <string name="toast_sucessful_login">Sessão iniciada com sucesso.</string>
+
+    <!-- AlertBuilder -->
+    <string name="alertb_notverified_email_title">Verificar E-Mail</string>
+    <string name="alertb_notverified_email">Por favor, verifique seu e-mail. Não é possível fazer login sem verificar.</string>
+
+
+    <string name="error">Ocorreu um erro.</string>
     <string name="error_weakpassword">Erro: Sua senha é muito fraca. Para que sua senha seja aceita, ela deve conter:\n
          - Pelo menos 6 caracteres.\n
          - Pelo menos uma letra maiúscula do alfabeto.\n
@@ -51,6 +71,7 @@
     <string name="error_invalid_email">Seu e-mail é inválido ou já está em uso, por favor insira outro.</string>
     <string name="error_used_email">Já existe outro usuário com este e-mail, por favor use outro.</string>
     <string name="error_register_failed">O registro falhou, por favor tente novamente.</string>
+
 
 
 

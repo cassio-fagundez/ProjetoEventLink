@@ -38,9 +38,28 @@
     <string name="field_date_of_birth">(*) FECHA DE NACIMIENTO</string>
     <string name="field_document_id">(*) CÉDULA DE IDENTIDAD (UY) O CPF (BR)</string>
 
+    <!-- Alertas -->
+    <string name="email_required">Correo requerido</string>
+    <string name="password_required">Contraseña requerida</string>
+    <string name="valid_email_required">Se necesita un correo válido.</string>
+    <string name="error_login_failed_email">No existe una cuenta con este correo.</string>
+    <string name="error_login_failed_password">La contraseña es inválida, por favor revise.</string>
+
+
     <!-- Toast y Errores -->
     <string name="toast_completeall">Por favor, complete todos los datos obligatorios.</string>
     <string name="toast_emailverification">Se ha registrado exitosamente, por favor verifique su correo.</string>
+    <string name="toast_writeemail">Por favor, ingrese su correo.</string>
+    <string name="toast_writepassword">Por favor, ingrese su contraseña.</string>
+    <string name="toast_rewriteemail">Verifique su correo.</string>
+    <string name="toast_sucessful_login">Se ha iniciado sesión.</string>
+
+    <!-- AlertBuilder -->
+    <string name="alertb_notverified_email_title">Verificar Correo</string>
+    <string name="alertb_notverified_email">Por favor verifique su correo. No puede iniciar sesión si no se verifica.</string>
+
+
+    <string name="error">Ha ocurrido un error.</string>
     <string name="error_weakpassword">Error: Su contraseña es demasiado débil. Para que su contraseña sea aceptada esta debe contener:\n
          - Al menos 6 caracteres\n
          - Al menos una letra del alfabeto mayúscula.\n
