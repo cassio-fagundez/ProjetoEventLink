@@ -87,7 +87,9 @@ public class SignInActivity extends AppCompatActivity {
                     // Revisa si el email está confirmado.
                     if (firebaseUser.isEmailVerified()){
                         Toast.makeText(SignInActivity.this, getString(R.string.toast_sucessful_login), Toast.LENGTH_SHORT).show();
-                        // Se abre la activity logueada.
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                        finish();
                     } else {
                         firebaseUser.sendEmailVerification();
                         authProfile.signOut();

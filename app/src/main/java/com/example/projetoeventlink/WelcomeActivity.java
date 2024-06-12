@@ -7,9 +7,14 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +28,8 @@ public class WelcomeActivity extends AppCompatActivity {
     private TextView tvNome;
     private FirebaseAuth authProfile;
     private DatabaseReference referenceProfile;
+    private BottomNavigationView bnView;
+    private FloatingActionButton faButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +66,66 @@ public class WelcomeActivity extends AppCompatActivity {
             });
 
         }
+
+        // Configuración de los ítems del Bottom Navigation Bar.
+
+        bnView = findViewById(R.id.bottomNavigationView);
+        faButton = findViewById(R.id.floatingActionButton);
+
+        // CONTINUAR DESDE AQUÍ.
+
+       /* bnView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId()==R.id.menu_home){
+                    return true;
+                } else if (item.getItemId()==R.id.menu_refresh){
+                    return true;
+                } else if (item.getItemId()==R.id.menu_settings){
+                    return true;
+                } else if (item.getItemId()==R.id.menu_logout) {
+                    return true;
+                } else { return true; }
+            }
+        }); VERSION NO DEPRECADA. PROBAR DESPUÉS SI FUNCIONA. */
+
+        bnView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId()==R.id.menu_home){
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                } else if (item.getItemId()==R.id.menu_refresh){
+                    startActivity(getIntent());
+                    overridePendingTransition(0,0);
+
+
+                } else if (item.getItemId()==R.id.menu_settings){
+
+
+                } else if (item.getItemId()==R.id.menu_logout) {
+                    authProfile.signOut();
+                    Toast.makeText(WelcomeActivity.this, getString(R.string.toast_sucessful_logout), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    //Flags para que el usuario no pueda regresar y loguearse.
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+                return true;
+            }
+        });
+
+        faButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // AGREGAR FUNCION PARA AGREGAR NUEVO EVENTO. INTENT PARA ADD EVENT. REVISAR SI YA HAY DOCUMENTO REGISTRADO.
+            }
+        });
+
     }
 
     private void checkifEmailVerified(FirebaseUser firebaseUser) {

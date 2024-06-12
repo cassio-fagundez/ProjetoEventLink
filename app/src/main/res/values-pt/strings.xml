@@ -55,6 +55,8 @@
     <string name="toast_writepassword">Por favor, insira sua senha.</string>
     <string name="toast_rewriteemail">Verifique seu e-mail.</string>
     <string name="toast_sucessful_login">Sessão iniciada com sucesso.</string>
+    <string name="toast_sucessful_logout">A sessão foi encerrada com sucesso.</string>
+
 
     <!-- AlertBuilder -->
     <string name="alertb_notverified_email_title">Verificar E-Mail</string>
