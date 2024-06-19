@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Inicio"
+    <item android:title="@string/home"
         android:icon="@drawable/baseline_home_24"
         android:id="@+id/menu_home"
         />
 
-    <item android:title="Refresh"
+    <item android:title="@string/refresh"
         android:icon="@drawable/baseline_refresh_24"
         android:id="@+id/menu_refresh"
         />
@@ -15,12 +15,12 @@
         android:id="@+id/add_event"
         />
 
-    <item android:title="Settings"
+    <item android:title="@string/settings"
         android:icon="@drawable/baseline_settings_24"
         android:id="@+id/menu_settings"
         />
 
-    <item android:title="Log Out"
+    <item android:title="@string/logout"
         android:icon="@drawable/baseline_logout_24"
         android:id="@+id/menu_logout"
         />

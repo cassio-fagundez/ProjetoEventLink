@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".Telas.SettingsActivity">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/baseline_settings_24"
+        app:tint="@color/black"
+        android:layout_marginBottom="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="50dp"/>
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:drawableLeft="@drawable/baseline_person_outline_24"
+        android:drawableTint="@color/white"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_profile"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnLanguages"
+        android:drawableLeft="@drawable/ic_language"
+        android:drawableTint="@color/white"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_languages"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnNotifications"
+        android:drawableLeft="@drawable/baseline_notifications_none_24"
+        android:drawableTint="@color/white"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_notifications"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

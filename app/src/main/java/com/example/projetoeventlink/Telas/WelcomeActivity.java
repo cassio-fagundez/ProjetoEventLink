@@ -1,4 +1,4 @@
-package com.example.projetoeventlink;
+package com.example.projetoeventlink.Telas;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.projetoeventlink.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
@@ -74,23 +75,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         // CONTINUAR DESDE AQUÍ.
 
-       /* bnView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId()==R.id.menu_home){
-                    return true;
-                } else if (item.getItemId()==R.id.menu_refresh){
-                    return true;
-                } else if (item.getItemId()==R.id.menu_settings){
-                    return true;
-                } else if (item.getItemId()==R.id.menu_logout) {
-                    return true;
-                } else { return true; }
-            }
-        }); VERSION NO DEPRECADA. PROBAR DESPUÉS SI FUNCIONA. */
-
-        bnView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
-
+        bnView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId()==R.id.menu_home){

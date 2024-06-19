@@ -7,11 +7,21 @@
     <string name="title_register">Registrarse</string>
     <string name="title_welcome">Bienvenido</string>
     <string name="ask_language">Escoge tu lenguaje</string>
+    <string name="settings">Configuraciones</string>
+
+    <!-- Bottom Navigation Bar -->
+    <string name="home">Inicio</string>
+    <string name="refresh">Recargar</string>
+    <string name="logout">Cerrar sesión</string>
+
 
     <!-- Botones -->
     <string name="button_login">Iniciar sesión</string>
     <string name="button_register">Registrarse</string>
     <string name="button_continue">Continuar</string>
+    <string name="button_languages">Idiomas</string>
+    <string name="button_profile">Perfil</string>
+    <string name="button_notifications">Notificaciones</string>
 
     <!-- EditText -->
     <string name="edittext_email">Correo electrónico</string>

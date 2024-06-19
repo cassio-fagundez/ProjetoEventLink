@@ -13,19 +13,22 @@
         android:theme="@style/Theme.ProjetoEventLink"
         tools:targetApi="31">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".Telas.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".Telas.WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".LanguageActivity"
+            android:name=".Telas.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".Telas.LanguageActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Telas.SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Telas.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

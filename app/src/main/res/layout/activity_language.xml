@@ -8,7 +8,7 @@
     android:gravity="center"
     android:padding="24dp"
     android:background="@android:color/white"
-    tools:context=".LanguageActivity">
+    tools:context=".Telas.LanguageActivity">
 
     <ImageView
         android:layout_width="100dp"
