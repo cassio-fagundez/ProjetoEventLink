@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp"
+    android:background="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título del evento -->
+        <TextView
+            android:id="@+id/tvEventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Title"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Fechas del evento -->
+        <TextView
+            android:id="@+id/tvEventDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Fecha Inicio: 01/01/2024 - Fecha Final: 02/01/2024"
+            android:textSize="14sp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Horarios del evento -->
+        <TextView
+            android:id="@+id/tvEventTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Hora Inicio: 10:00 AM - Hora Final: 5:00 PM"
+            android:textSize="14sp"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/tvEventLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:padding="4dp"
+            android:layout_marginTop="8dp"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

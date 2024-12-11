@@ -14,12 +14,12 @@ import com.example.projetoeventlink.R;
 
 import java.util.Locale;
 
-public class LanguageActivity extends AppCompatActivity {
+public class SettingsLanguageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_language);
+        setContentView(R.layout.activity_settings_language);
 
         Button btnSpanish = findViewById(R.id.btnSpanish);
         Button btnPortuguese = findViewById(R.id.btnPortuguese);
@@ -55,7 +55,7 @@ public class LanguageActivity extends AppCompatActivity {
     }
 
     private void openNextActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
         finish();
     }

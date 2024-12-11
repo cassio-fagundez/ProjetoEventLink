@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:padding="24dp"
-    tools:context=".Telas.SignUpActivity">
+    tools:context=".Telas.UserRegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             app:endIconMode="none">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/etFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

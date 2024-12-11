@@ -1,71 +1,41 @@
 package com.example.projetoeventlink.Telas;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.example.projetoeventlink.R;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         // Verificar si ya se ha configurado un idioma previamente
         String savedLanguage = getSavedLanguage();
         if (savedLanguage == null) {
             // Configurar el idioma por defecto
-            setDefaultLanguage("es");
+            startActivity(new Intent(MainActivity.this, SettingsLanguageActivity.class));
+            finish();
+        } else {
+            startActivity(new Intent(MainActivity.this, WelcomeActivity.class));
+            finish();
         }
 
-        // Botón Idioma
-        Button buttonLanguage = findViewById(R.id.buttonLanguage);
-        buttonLanguage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Aquí inicia la actividad de Idioma
-                startActivity(new Intent(MainActivity.this, LanguageActivity.class));
-            }
-        });
-
-
-        // Botón Bienvenida
-        Button buttonWelcome = findViewById(R.id.buttonWelcome);
-        buttonWelcome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Aquí inicia la actividad de Bienvenida
-                startActivity(new Intent(MainActivity.this, WelcomeActivity.class));
-            }
-        });
-
-        // Botón Login
-        Button buttonLogin = findViewById(R.id.buttonLogin);
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Aquí inicia la actividad de Login
-                startActivity(new Intent(MainActivity.this, SignInActivity.class));
-            }
-        });
-
-        // Botón Register
-        Button buttonRegister = findViewById(R.id.buttonRegister);
-        buttonRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Aquí inicia la actividad de Register
-                startActivity(new Intent(MainActivity.this, SignUpActivity.class));
-            }
-        });
     }
 
     private String getSavedLanguage() {

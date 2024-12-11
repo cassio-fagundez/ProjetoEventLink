@@ -4,43 +4,5 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
 
-        <!-- Botón Idioma -->
-        <Button
-            android:id="@+id/buttonLanguage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lenguaje"
-            android:layout_marginBottom="16dp"/>
-
-        <!-- Botón Bienvenida -->
-        <Button
-            android:id="@+id/buttonWelcome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bienvenida"
-            android:layout_marginBottom="16dp"/>
-
-        <!-- Botón Login -->
-        <Button
-            android:id="@+id/buttonLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:layout_marginBottom="16dp"/>
-
-        <!-- Botón Register -->
-        <Button
-            android:id="@+id/buttonRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register"
-            android:layout_marginBottom="16dp"/>
-
-    </LinearLayout>
 </ScrollView>

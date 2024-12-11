@@ -8,9 +8,11 @@
     <string name="title_welcome">Bem-vindo</string>
     <string name="ask_language">Escolha o seu idioma</string>
     <string name="settings">Configurações</string>
+    <string name="settings_profile">Editar Perfil</string>
+
 
     <!-- Bottom Navigation Bar -->
-    <string name="home">Início</string>
+    <string name="home">Lista</string>
     <string name="refresh">Recarregar</string>
     <string name="logout">Sair</string>
 
@@ -21,6 +23,7 @@
     <string name="button_languages">Idiomas</string>
     <string name="button_profile">Perfil</string>
     <string name="button_notifications">Notificações</string>
+    <string name="button_save_changes">Salvar Alterações</string>
 
 
 
@@ -33,6 +36,8 @@
     <string name="message_welcome">Bem-vindo ao EventLink!</string>
     <string name="message_login_success">Login bem sucedido!</string>
     <string name="message_register_success">Registro bem sucedido!</string>
+    <string name="message_become_organizer">Torne-se um usuário organizador.</string>
+
 
     <!-- Campos -->
     <string name="field_first_name">(*) PRIMEIRO NOME</string>
@@ -48,6 +53,8 @@
     <string name="field_show_password">Ver senha</string>
     <string name="field_date_of_birth">(*) DATA DE NASCIMENTO</string>
     <string name="field_document_id">(*) CPF (BR) OU C.I (UY)</string>
+    <string name="field_event_title">(*) TÍTULO DO EVENTO</string>
+
 
 
     <!-- Alertas -->
@@ -84,6 +91,10 @@
     <string name="error_invalid_email">Seu e-mail é inválido ou já está em uso, por favor insira outro.</string>
     <string name="error_used_email">Já existe outro usuário com este e-mail, por favor use outro.</string>
     <string name="error_register_failed">O registro falhou, por favor tente novamente.</string>
+    <string name="error_invalid_name">Por favor, insira um nome válido sem números ou símbolos.</string>
+    <string name="error_invalid_lastname">Por favor, insira um sobrenome válido sem números ou símbolos.</string>
+    <string name="error_invalid_age">Você deve ter pelo menos 14 anos para se registrar.</string>
+
 
 
 

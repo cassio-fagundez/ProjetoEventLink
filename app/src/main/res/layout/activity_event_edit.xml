@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Telas.EventEditActivity">
+
+    <android.widget.ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Fecha de inicio -->
+            <TextView
+                android:id="@+id/tvFechaInicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha de inicio"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilFechaInicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etFechaInicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Fecha final -->
+            <TextView
+                android:id="@+id/tvFechaFinal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha de finalización"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilFechaFinal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/etFechaFinal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:clickable="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/btnClearFechaFinal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_clear"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:contentDescription="Limpiar fecha de finalización"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Hora de inicio -->
+            <TextView
+                android:id="@+id/tvHoraInicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hora de inicio"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilHoraInicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etHoraInicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:clickable="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Hora final -->
+            <TextView
+                android:id="@+id/tvHoraFinal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hora final"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilHoraFinal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/etHoraFinal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:clickable="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/btnClearHoraFinal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_clear"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:contentDescription="Limpiar hora final"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Dirección Presencial -->
+            <TextView
+                android:id="@+id/tvDireccionPresencial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dirección Presencial"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDireccionPresencial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etDireccionPresencial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Selección de Ubicación -->
+            <TextView
+                android:id="@+id/tvTituloUbicacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar ubicación"
+                android:textSize="16sp"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/btnSeleccionarUbicacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Abrir Mapa para Seleccionar Ubicación" />
+
+
+
+            <!-- URL Virtual -->
+            <TextView
+                android:id="@+id/tvURLVirtual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="URL Virtual"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilURLVirtual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etURLVirtual"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Descripción -->
+            <TextView
+                android:id="@+id/tvDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Categorías -->
+            <TextView
+                android:id="@+id/tvCategorias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categorías"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:paddingBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCategorias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/etCategorias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Botones de Guardar y Eliminar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <!-- Botón Guardar -->
+                <Button
+                    android:id="@+id/btnGuardarEvento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Guardar cambios"
+                    android:textColor="@android:color/white"
+                    android:layout_marginEnd="8dp" />
+
+                <!-- Botón Eliminar -->
+                <Button
+                    android:id="@+id/btnEliminarEvento"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Eliminar evento"
+                    android:backgroundTint="@android:color/holo_red_dark"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </android.widget.ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

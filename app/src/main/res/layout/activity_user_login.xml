@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:background="@color/white"
-    tools:context=".Telas.SignInActivity">
+    tools:context=".Telas.UserLoginActivity">
 
     <!-- Título "Iniciar Sesión" -->
     <TextView
@@ -26,7 +26,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/eventlink_logo"
+        android:src="@drawable/eventlink_marker"
         android:layout_marginBottom="24dp"/>
 
     <com.google.android.material.textfield.TextInputLayout

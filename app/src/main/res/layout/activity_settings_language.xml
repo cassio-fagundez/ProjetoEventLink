@@ -8,7 +8,7 @@
     android:gravity="center"
     android:padding="24dp"
     android:background="@android:color/white"
-    tools:context=".Telas.LanguageActivity">
+    tools:context=".Telas.SettingsLanguageActivity">
 
     <ImageView
         android:layout_width="100dp"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:text="Español"
         android:textColor="@android:color/white"
-        android:backgroundTint="#DFA228"
+        android:backgroundTint="#2850DF"
         android:layout_marginBottom="16dp"/>
 
     <Button
@@ -41,6 +41,15 @@
         android:text="Português"
         android:textColor="@android:color/white"
         android:backgroundTint="#02592e"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnEnglish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="English"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#D11919"
         android:layout_marginBottom="16dp"/>
 
 </LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Telas.EventQuestionsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título del Evento -->
+        <TextView
+            android:id="@+id/tvEventTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="@color/black" />
+
+        <!-- Título de la sección -->
+        <TextView
+            android:id="@+id/tvQuestionsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preguntas y Respuestas"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="@color/black" />
+
+        <!-- Botón para dejar una nueva pregunta -->
+        <Button
+            android:id="@+id/btnNewQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dejar una nueva pregunta"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:layout_marginVertical="16dp" />
+
+        <!-- Lista de preguntas y respuestas -->
+        <TextView
+            android:id="@+id/tvNoQuestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aún no hay preguntas. ¡Sé el primero en preguntar!"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginVertical="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvQuestionsAnswers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</ScrollView>

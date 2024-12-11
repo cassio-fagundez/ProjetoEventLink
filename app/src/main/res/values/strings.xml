@@ -8,9 +8,10 @@
     <string name="title_welcome">Bienvenido</string>
     <string name="ask_language">Escoge tu lenguaje</string>
     <string name="settings">Configuraciones</string>
+    <string name="settings_profile">Editar Perfil</string>
 
     <!-- Bottom Navigation Bar -->
-    <string name="home">Inicio</string>
+    <string name="home">Lista</string>
     <string name="refresh">Recargar</string>
     <string name="logout">Cerrar sesión</string>
 
@@ -22,6 +23,8 @@
     <string name="button_languages">Idiomas</string>
     <string name="button_profile">Perfil</string>
     <string name="button_notifications">Notificaciones</string>
+    <string name="button_save_changes">Guardar Cambios</string>
+
 
     <!-- EditText -->
     <string name="edittext_email">Correo electrónico</string>
@@ -32,6 +35,8 @@
     <string name="message_welcome">¡Bienvenido a EventLink!</string>
     <string name="message_login_success">¡Inicio de sesión exitoso!</string>
     <string name="message_register_success">¡Registro exitoso!</string>
+    <string name="message_become_organizer">Conviértete en usuario organizador.</string>
+
 
     <!-- Campos -->
     <string name="field_first_name">(*) PRIMER NOMBRE</string>
@@ -47,6 +52,7 @@
     <string name="field_show_password">Mostrar contraseña</string>
     <string name="field_date_of_birth">(*) FECHA DE NACIMIENTO</string>
     <string name="field_document_id">(*) CÉDULA DE IDENTIDAD (UY) O CPF (BR)</string>
+    <string name="field_event_title">(*) TÍTULO DEL EVENTO</string>
 
     <!-- Alertas -->
     <string name="email_required">Correo requerido</string>
@@ -80,6 +86,9 @@
     <string name="error_invalid_email">Su correo es inválido o ya está en uso, por favor ingrese otro.</string>
     <string name="error_used_email">Ya existe otro usuario con este email, por favor use otro.</string>
     <string name="error_register_failed">El registro ha fallado, por favor intente nuevamente.</string>
+    <string name="error_invalid_name">Por favor, ingresa un nombre válido sin números ni símbolos.</string>
+    <string name="error_invalid_lastname">Por favor, ingresa un apellido válido sin números ni símbolos.</string>
+    <string name="error_invalid_age">Debes tener al menos 14 años para registrarte.</string>
 
 
 </resources>

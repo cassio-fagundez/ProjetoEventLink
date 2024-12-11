@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".Telas.EventDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Imagen del Evento -->
+        <ImageView
+            android:id="@+id/ivEventImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/logo1" />
+
+        <!-- Botones e Información -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <!-- Botón Like -->
+            <ImageButton
+                android:id="@+id/btnLike"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/likeline"
+                android:contentDescription="Me interesa"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone"/>
+
+            <!-- Contador de interesados -->
+            <TextView
+                android:id="@+id/tvInteresados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 interesados"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="16dp" />
+
+            <!-- Botón Preguntas y Respuestas -->
+            <Button
+                android:id="@+id/btnPreguntas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#007BFF"
+                android:text="Preguntas y Respuestas"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+
+        <!-- Título -->
+        <TextView
+            android:text="Título"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Fecha -->
+        <TextView
+            android:text="Fecha de Inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvFechaInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:text="Fecha Final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvFechaFinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Hora -->
+        <TextView
+            android:text="Hora de Inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvHoraInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:text="Hora Final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvHoraFinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DDDDDD"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Descripción -->
+        <TextView
+            android:text="Descripción"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Dirección -->
+        <TextView
+            android:text="Dirección Presencial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <!-- URL -->
+        <TextView
+            android:text="URL Virtual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Categorías -->
+        <TextView
+            android:text="Categorías"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="4dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvCategorias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botón Editar -->
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Editar Evento"
+            android:textStyle="bold"
+            android:backgroundTint="#007BFF"
+            android:textColor="#FFFFFF"
+            android:visibility="gone"
+            android:layout_marginTop="16dp" />
+
+        <!-- Botón Reportar -->
+        <Button
+            android:id="@+id/btnReportar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reportar Evento"
+            android:textStyle="bold"
+            android:backgroundTint="@color/red"
+            android:visibility="gone"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>
