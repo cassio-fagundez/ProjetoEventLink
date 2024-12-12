@@ -123,7 +123,7 @@ public class UserLoginActivity extends AppCompatActivity {
         builder.setMessage(getString(R.string.alertb_notverified_email));
 
         // Botón "Abrir correo"
-        builder.setPositiveButton("Abrir correo", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.openemail), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(Intent.ACTION_MAIN);

@@ -79,8 +79,8 @@ public class EventRegisterActivity extends AppCompatActivity {
             mapFragment.setOnLocationSelectedListener((latitude, longitude) -> {
                 Latitud = latitude;
                 Longitud = longitude;
-                tvTituloUbicacion.setText("Seleccionar ubicación: ("+Latitud+","+Longitud+")");
-                Toast.makeText(this, "Ubicación seleccionada:\n Lat: " + Latitud + "\nLon: " + Longitud, Toast.LENGTH_SHORT).show();
+                tvTituloUbicacion.setText(getString(R.string.selectubication)+": ("+Latitud+","+Longitud+")");
+                Toast.makeText(this, getString(R.string.selectedlocation)+":\n Lat: " + Latitud + "\nLon: " + Longitud, Toast.LENGTH_SHORT).show();
             });
 
             // Muestra el fragmento como diálogo
@@ -232,7 +232,7 @@ public class EventRegisterActivity extends AppCompatActivity {
                     Toast.makeText(EventRegisterActivity.this, getString(R.string.message_register_success), Toast.LENGTH_LONG).show();
                     finish();
                 } else {
-                    Log.e(TAG, "Error al registrar evento", task.getException());
+                    Log.e(TAG, getString(R.string.event_registration_error), task.getException());
                     Toast.makeText(EventRegisterActivity.this, getString(R.string.error_register_failed), Toast.LENGTH_LONG).show();
                 }
             }
@@ -279,7 +279,5 @@ public class EventRegisterActivity extends AppCompatActivity {
                 }, hour, minute, true);
         timePickerDialog.show();
     }
-
-
 
 }

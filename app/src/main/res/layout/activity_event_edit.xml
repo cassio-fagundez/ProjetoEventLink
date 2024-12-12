@@ -21,7 +21,7 @@
                 android:id="@+id/tvTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Título"
+                android:text="@string/title"
                 android:textSize="16sp"
                 android:textColor="#000000"
                 android:paddingBottom="8dp" />
@@ -43,7 +43,7 @@
                 android:id="@+id/tvFechaInicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fecha de inicio"
+                android:text="@string/start_date"
                 android:textSize="16sp"
                 android:textColor="#000000"
                 android:paddingBottom="8dp" />
@@ -66,7 +66,7 @@
                 android:id="@+id/tvFechaFinal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fecha de finalización"
+                android:text="@string/end_date"
                 android:textSize="16sp"
                 android:textColor="#000000"
                 android:paddingBottom="8dp" />
@@ -106,7 +106,7 @@
                 android:id="@+id/tvHoraInicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hora de inicio"
+                android:text="@string/start_time"
                 android:textSize="16sp"
                 android:textColor="#000000"
                 android:paddingBottom="8dp" />
@@ -129,7 +129,7 @@
                 android:id="@+id/tvHoraFinal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hora final"
+                android:text="@string/end_time"
                 android:textSize="16sp"
                 android:textColor="#000000"
                 android:paddingBottom="8dp" />
@@ -169,7 +169,7 @@
                 android:id="@+id/tvDireccionPresencial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dirección Presencial"
+                android:text="@string/in_person_address"
                 android:textSize="16sp"
                 android:textColor="#000000"
                 android:paddingBottom="8dp" />
@@ -190,7 +190,7 @@
                 android:id="@+id/tvTituloUbicacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Seleccionar ubicación"
+                android:text="@string/select_location_title"
                 android:textSize="16sp"
                 android:textColor="@android:color/black" />
 
@@ -199,7 +199,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:text="Abrir Mapa para Seleccionar Ubicación" />
+                android:text="@string/select_location_button" />
 
 
 
@@ -208,7 +208,7 @@
                 android:id="@+id/tvURLVirtual"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="URL Virtual"
+                android:text="@string/virtual_url"
                 android:textSize="16sp"
                 android:textColor="#000000"
                 android:paddingBottom="8dp" />
@@ -229,7 +229,7 @@
                 android:id="@+id/tvDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descripción"
+                android:text="@string/description"
                 android:textSize="16sp"
                 android:textColor="#000000"
                 android:paddingBottom="8dp" />
@@ -251,7 +251,7 @@
                 android:id="@+id/tvCategorias"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Categorías"
+                android:text="@string/categories"
                 android:textSize="16sp"
                 android:textColor="#000000"
                 android:paddingBottom="8dp" />
@@ -280,7 +280,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Guardar cambios"
+                    android:text="@string/save_event"
                     android:textColor="@android:color/white"
                     android:layout_marginEnd="8dp" />
 
@@ -290,7 +290,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Eliminar evento"
+                    android:text="@string/delete_event"
                     android:backgroundTint="@android:color/holo_red_dark"
                     android:textColor="@android:color/white" />
             </LinearLayout>

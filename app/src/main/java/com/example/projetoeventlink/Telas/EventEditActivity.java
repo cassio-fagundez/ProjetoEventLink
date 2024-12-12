@@ -67,7 +67,7 @@ public class EventEditActivity extends AppCompatActivity {
         etCategorias.setText(intent.getStringExtra("categorias"));
         Latitud = intent.getDoubleExtra("latitud", 0.0);
         Longitud = intent.getDoubleExtra("longitud", 0.0);
-        tvTituloUbicacion.setText("Seleccionar ubicación: ("+Latitud+","+Longitud+")");
+        tvTituloUbicacion.setText(getString(R.string.selectubication)+": ("+Latitud+","+Longitud+")");
 
         // Configurar seleccionadores de fecha y hora
         etFechaInicio.setOnClickListener(v -> showDatePickerDialog(etFechaInicio));
@@ -94,8 +94,8 @@ public class EventEditActivity extends AppCompatActivity {
             mapFragment.setOnLocationSelectedListener((latitude, longitude) -> {
                 Latitud = latitude;
                 Longitud = longitude;
-                tvTituloUbicacion.setText("Seleccionar ubicación: ("+Latitud+","+Longitud+")");
-                Toast.makeText(this, "Ubicación seleccionada:\n Lat: " + Latitud + "\nLon: " + Longitud, Toast.LENGTH_SHORT).show();
+                tvTituloUbicacion.setText(getString(R.string.selectubication)+": ("+Latitud+","+Longitud+")");
+                Toast.makeText(this, getString(R.string.selectedlocation)+":\n Lat: " + Latitud + "\nLon: " + Longitud, Toast.LENGTH_SHORT).show();
             });
 
             // Muestra el fragmento como diálogo
@@ -116,7 +116,7 @@ public class EventEditActivity extends AppCompatActivity {
             btnGuardarCambios.setEnabled(false);
 
             // Mostrar un mensaje al usuario indicando que el evento no se puede editar
-            Toast.makeText(this, "Este evento pertenece a una fecha pasada y no se puede editar.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.evento_pasado_no_editable), Toast.LENGTH_LONG).show();
         }
 
     }
@@ -191,10 +191,10 @@ public class EventEditActivity extends AppCompatActivity {
     private void mostrarConfirmacionEliminar() {
         // Crear el cuadro de diálogo de confirmación
         new AlertDialog.Builder(this)
-                .setTitle("Eliminar Evento")
-                .setMessage("¿Estás seguro de que deseas eliminar este evento? Esta acción no se puede deshacer.")
-                .setPositiveButton("Eliminar", (dialog, which) -> eliminarEvento())
-                .setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss())
+                .setTitle(getString(R.string.titulo_eliminar_evento))
+                .setMessage(getString(R.string.confirmacion_eliminar_evento))
+                .setPositiveButton(getString(R.string.eliminar), (dialog, which) -> eliminarEvento())
+                .setNegativeButton(getString(R.string.cancel), (dialog, which) -> dialog.dismiss())
                 .show();
     }
 
@@ -205,18 +205,18 @@ public class EventEditActivity extends AppCompatActivity {
             databaseRef.removeValue()
                     .addOnSuccessListener(aVoid -> {
                         // Mostrar mensaje de éxito
-                        Toast.makeText(this, "Evento eliminado con éxito", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.evento_eliminado_con_exito), Toast.LENGTH_SHORT).show();
                         // Finalizar Activity y regresar
                         startActivity(new Intent(EventEditActivity.this, WelcomeActivity.class));
                         finish();
                     })
                     .addOnFailureListener(e -> {
                         // Mostrar mensaje de error
-                        Toast.makeText(this, "Error al eliminar el evento: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.error_eliminar_evento) + e.getMessage(), Toast.LENGTH_SHORT).show();
                     });
         } else {
             // Mostrar mensaje de error si el ID del evento es nulo
-            Toast.makeText(this, "No se pudo identificar el evento a eliminar", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.evento_no_identificado), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -235,7 +235,7 @@ public class EventEditActivity extends AppCompatActivity {
         // Validación de campos obligatorios
         if (titulo.isEmpty() || fechaInicio.isEmpty() || horaInicio.isEmpty() || descripcion.isEmpty() || categorias.isEmpty()) {
             // Mostrar mensaje de error si hay campos obligatorios vacíos
-            Toast.makeText(this, "Por favor, complete todos los campos obligatorios", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.campos_obligatorios_vacios), Toast.LENGTH_SHORT).show();
             return;
         }
 

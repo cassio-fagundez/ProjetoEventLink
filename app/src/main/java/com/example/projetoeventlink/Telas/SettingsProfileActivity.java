@@ -93,10 +93,10 @@ public class SettingsProfileActivity extends AppCompatActivity {
                 else rbtnGenderO.setChecked(true);
 
             } else {
-                Toast.makeText(this, "No se encontraron datos del usuario.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.no_user_data_found), Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(error ->
-                Toast.makeText(this, "Error al cargar datos: " + error.getMessage(), Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, getString(R.string.error_al_cargar_datos) + error.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void showDatePicker() {
@@ -125,19 +125,19 @@ public class SettingsProfileActivity extends AppCompatActivity {
         String document = etDocument.getText().toString().trim();
 
         if (firstName.isEmpty() || firstLastName.isEmpty() || dateOfBirth.isEmpty()) {
-            Toast.makeText(this, "Por favor, completa los campos obligatorios.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.required_fields_missing), Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (!document.isEmpty()) {
             if (!(DocumentValidator.validarCI(document) || DocumentValidator.validarCPF(document))) {
-                Toast.makeText(this, "Documento inválido.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.invalid_document), Toast.LENGTH_SHORT).show();
                 return;
             }
 
             checkIfDocumentExists(document, exists -> {
                 if (exists) {
-                    Toast.makeText(this, "El documento ya está registrado.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.document_already_registered), Toast.LENGTH_SHORT).show();
                 } else {
                     updateUserData(firstName, secondName, firstLastName, secondLastName, dateOfBirth, document);
                 }
@@ -188,9 +188,9 @@ public class SettingsProfileActivity extends AppCompatActivity {
 
         userRef.updateChildren(updates).addOnSuccessListener(aVoid -> {
             etDocument.setEnabled(false);
-            Toast.makeText(this, "Datos actualizados correctamente.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.data_updated_successfully), Toast.LENGTH_SHORT).show();
         }).addOnFailureListener(error ->
-                Toast.makeText(this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, getString(R.string.general_error)+": " + error.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     interface DocumentExistsCallback {

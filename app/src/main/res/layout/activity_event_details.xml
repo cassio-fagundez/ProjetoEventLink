@@ -36,7 +36,6 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/likeline"
-                android:contentDescription="Me interesa"
                 android:layout_marginEnd="8dp"
                 android:visibility="gone"/>
 
@@ -45,7 +44,7 @@
                 android:id="@+id/tvInteresados"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0 interesados"
+                android:text="@string/interested_count"
                 android:textSize="16sp"
                 android:textColor="#333333"
                 android:layout_gravity="center_vertical"
@@ -57,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#007BFF"
-                android:text="Preguntas y Respuestas"
+                android:text="@string/btn_questions"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
@@ -65,7 +64,7 @@
 
         <!-- Título -->
         <TextView
-            android:text="Título"
+            android:text="@string/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -89,7 +88,7 @@
 
         <!-- Fecha -->
         <TextView
-            android:text="Fecha de Inicio"
+            android:text="@string/start_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -106,7 +105,7 @@
             android:layout_marginBottom="8dp" />
 
         <TextView
-            android:text="Fecha Final"
+            android:text="@string/end_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -130,7 +129,7 @@
 
         <!-- Hora -->
         <TextView
-            android:text="Hora de Inicio"
+            android:text="@string/start_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -147,7 +146,7 @@
             android:layout_marginBottom="8dp" />
 
         <TextView
-            android:text="Hora Final"
+            android:text="@string/end_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -171,7 +170,7 @@
 
         <!-- Descripción -->
         <TextView
-            android:text="Descripción"
+            android:text="@string/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -189,7 +188,7 @@
 
         <!-- Dirección -->
         <TextView
-            android:text="Dirección Presencial"
+            android:text="@string/in_person_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -207,7 +206,7 @@
 
         <!-- URL -->
         <TextView
-            android:text="URL Virtual"
+            android:text="@string/virtual_url"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -225,7 +224,7 @@
 
         <!-- Categorías -->
         <TextView
-            android:text="Categorías"
+            android:text="@string/categories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -246,7 +245,7 @@
             android:id="@+id/btnEditar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Editar Evento"
+            android:text="@string/edit_event"
             android:textStyle="bold"
             android:backgroundTint="#007BFF"
             android:textColor="#FFFFFF"
@@ -258,7 +257,7 @@
             android:id="@+id/btnReportar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Reportar Evento"
+            android:text="@string/report_event"
             android:textStyle="bold"
             android:backgroundTint="@color/red"
             android:visibility="gone"

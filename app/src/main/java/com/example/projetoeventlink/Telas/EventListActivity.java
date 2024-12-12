@@ -43,7 +43,7 @@ public class EventListActivity extends AppCompatActivity {
 
         // Crear la lista que se pasará al adapter
         eventList = new ArrayList<>();
-        eventAdapter = new EventAdapter(eventList);
+        eventAdapter = new EventAdapter(getApplicationContext(), eventList);
         recyclerView.setAdapter(eventAdapter);
 
         // Inicialización del RadioGroup
@@ -86,7 +86,7 @@ public class EventListActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError error) {
                 Log.e(TAG, "Error al obtener los eventos: " + error.getMessage());
-                Toast.makeText(EventListActivity.this, "Error al cargar eventos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EventListActivity.this, getString(R.string.error_al_cargar_eventos), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -115,7 +115,7 @@ public class EventListActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError error) {
                 Log.e(TAG, "Error al obtener los eventos: " + error.getMessage());
-                Toast.makeText(EventListActivity.this, "Error al cargar eventos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EventListActivity.this, getString(R.string.error_al_cargar_eventos), Toast.LENGTH_SHORT).show();
             }
         });
     }

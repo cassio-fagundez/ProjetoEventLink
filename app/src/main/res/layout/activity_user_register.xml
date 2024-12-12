@@ -242,6 +242,52 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Término de Consentimiento de Datos Personales / Política de Privacidad -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/cbConsentimientoDatos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/tvCBConsentimientoDatos"
+                android:layout_width="wrap_content"
+                android:textColor="@color/celeste"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy_policy_acceptance"
+                />
+
+        </LinearLayout>
+
+        <!-- Términos y Condiciones de Uso -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/cbTerminosCondiciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/tvCBTerminosCondiciones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/celeste"
+                android:text="@string/terms_conditions_acceptance"
+                />
+
+        </LinearLayout>
+
         <!-- Botón de Registro -->
         <Button
             android:id="@+id/btnRegister"
@@ -251,6 +297,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
             android:text="@string/button_register"
+            android:enabled="false"
             android:textColor="@android:color/white" />
 
     </LinearLayout>

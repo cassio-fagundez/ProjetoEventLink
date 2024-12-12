@@ -94,7 +94,7 @@ public class MapLocationSelectorFragment extends DialogFragment {
                 // Crea y agrega un nuevo marcador
                 Marker marker = new Marker(mapView);
                 marker.setPosition(geoPoint);
-                marker.setTitle("Ubicación seleccionada");
+                marker.setTitle(getString(R.string.selectedlocation));
                 marker.setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.eventlink_marker, null));
 
                 mapView.getOverlays().add(marker);

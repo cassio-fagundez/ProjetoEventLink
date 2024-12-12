@@ -23,6 +23,7 @@ public class SettingsLanguageActivity extends AppCompatActivity {
 
         Button btnSpanish = findViewById(R.id.btnSpanish);
         Button btnPortuguese = findViewById(R.id.btnPortuguese);
+        Button btnEnglish = findViewById(R.id.btnEnglish);
 
         btnSpanish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,14 @@ public class SettingsLanguageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setLocale("pt");
+                openNextActivity();
+            }
+        });
+
+        btnEnglish.setOnClickListener(new View.OnClickListener() { // Nueva implementación
+            @Override
+            public void onClick(View v) {
+                setLocale("en");
                 openNextActivity();
             }
         });

@@ -1,5 +1,6 @@
 package com.example.projetoeventlink.Logica;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,10 +25,13 @@ import java.util.Objects;
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
 
     private List<Evento> eventList;
+    private Context context;
 
-    public EventAdapter(List<Evento> eventList) {
+    public EventAdapter(Context context, List<Evento> eventList) {
+        this.context = context;
         this.eventList = eventList;
     }
+
 
     public List<Evento> getFilteredEventsForMap() {
         List<Evento> filteredEvents = new ArrayList<>();
@@ -53,14 +57,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
         // Setear datos en el item del RecyclerView
         holder.tvEventTitle.setText(event.getTitulo());
-        if(!Objects.equals(event.getFechaFinal(), "") || event.getFechaFinal()!=null){
+        if (!Objects.equals(event.getFechaFinal(), "") || event.getFechaFinal() != null) {
             holder.tvEventDate.setText(String.format("%s - %s", event.getFechaInicio(), event.getFechaFinal()));
 
         } else {
             holder.tvEventDate.setText(String.format("%s", event.getFechaInicio()));
         }
 
-        if (!Objects.equals(event.getHoraFinal(), "") || event.getHoraFinal()!=null){
+        if (!Objects.equals(event.getHoraFinal(), "") || event.getHoraFinal() != null) {
             holder.tvEventTime.setText(String.format("%s - %s", event.getHoraInicio(), event.getHoraFinal()));
         } else {
             holder.tvEventTime.setText(String.format("%s", event.getHoraInicio()));
@@ -68,6 +72,15 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
         // Calcular etiqueta según fecha/hora actual
         String label = calculateEventLabel(event.getFechaInicio(), event.getFechaFinal());
+
+        if (label.equals("Hoy")) {
+            label = context.getString(R.string.label_hoy);
+        } else if (label.equals("Próximamente")) {
+            label = context.getString(R.string.label_proximamente);
+        } else if (label.equals("Finalizado")) {
+            label = context.getString(R.string.label_finalizado);
+        } else  label = context.getString(R.string.label_sinestado);
+
         holder.tvEventLabel.setText(label); // Mostrar etiqueta
 
         // Listener para el clic en el elemento
@@ -105,21 +118,21 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
             Date endDate = (fechaFinal != null && !fechaFinal.isEmpty()) ? dateFormat.parse(fechaFinal) : null;
 
             if (startDate != null) {
-                // Caso 1: Evento futuro
+                // Caso 1: Evento en curso (hoy o entre fecha inicio y final)
+                if (isSameDay(today.getTime(), startDate) ||
+                        (endDate != null && today.getTime().after(startDate) && !today.getTime().after(endDate))) {
+                    return "Hoy";
+                }
+                // Caso 2: Evento futuro
                 if (today.getTime().before(startDate)) {
                     return "Próximamente";
                 }
-                // Caso 2: Evento pasado
+                // Caso 3: Evento pasado (finalizado)
                 if (endDate != null && today.getTime().after(endDate)) {
                     return "Finalizado";
                 }
                 if (endDate == null && today.getTime().after(startDate)) {
                     return "Finalizado";
-                }
-                // Caso 3: Evento en curso (hoy o entre fecha inicio y final)
-                if (isSameDay(today.getTime(), startDate) ||
-                        (endDate != null && today.getTime().after(startDate) && today.getTime().before(endDate))) {
-                    return "Hoy";
                 }
             }
         } catch (ParseException e) {
@@ -140,7 +153,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         return cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
                 cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR);
     }
-
 
 
     @Override

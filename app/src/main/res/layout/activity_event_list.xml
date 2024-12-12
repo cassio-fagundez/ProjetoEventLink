@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
-        android:text="Lista de Eventos"
+        android:text="@string/list_events_title"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,14 +35,14 @@
             android:id="@+id/radioMyEvents"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mis Eventos"
+            android:text="@string/my_events"
             android:checked="true" />
 
         <RadioButton
             android:id="@+id/radioOtherEvents"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Otros Eventos" />
+            android:text="@string/other_events" />
     </RadioGroup>
 
     <!-- ScrollView que contiene el RecyclerView -->

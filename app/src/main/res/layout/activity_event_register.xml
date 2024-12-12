@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Título"
+            android:text="@string/title"
             android:textSize="16sp"
             android:textColor="@android:color/black" />
 
@@ -40,7 +40,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿Evento de un día o varios días?"
+            android:text="@string/event_duration_question"
             android:textSize="16sp"
             android:textColor="@android:color/black" />
 
@@ -55,19 +55,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="50dp"
-                android:text="Un Día" />
+                android:text="@string/one_day" />
             <RadioButton
                 android:id="@+id/rbtnVariosDias"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Varios Días" />
+                android:text="@string/multiple_days" />
         </RadioGroup>
 
         <!-- Fechas -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fecha"
+            android:text="@string/date"
             android:textSize="16sp"
             android:textColor="@android:color/black" />
 
@@ -87,9 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-
                     android:layout_marginRight="10dp"
-
                     android:focusable="false"
                     android:inputType="date" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -115,7 +113,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿Con horario final?"
+            android:text="@string/end_time_question"
             android:textSize="16sp"
             android:textColor="@android:color/black" />
 
@@ -130,19 +128,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="50dp"
-                android:text="No" />
+                android:text="@string/no" />
             <RadioButton
                 android:id="@+id/rbtnFinalSi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sí" />
+                android:text="@string/yes" />
         </RadioGroup>
 
         <!-- Horario -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Horario"
+            android:text="@string/time"
             android:textSize="16sp"
             android:textColor="@android:color/black" />
 
@@ -190,7 +188,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tipo de Evento"
+            android:text="@string/event_type"
             android:textSize="16sp"
             android:textColor="@android:color/black" />
 
@@ -205,12 +203,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="50dp"
-                android:text="Virtual" />
+                android:text="@string/virtual_event" />
             <RadioButton
                 android:id="@+id/rbtnPresencial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Presencial" />
+                android:text="@string/in_person_event" />
         </RadioGroup>
 
         <!-- URL Virtual -->
@@ -218,7 +216,7 @@
             android:id="@+id/tvURLVirtual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="URL de la Sala"
+            android:text="@string/virtual_room_url"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:visibility="gone" />
@@ -240,7 +238,7 @@
             android:id="@+id/tvDireccionPresencial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dirección"
+            android:text="@string/address"
             android:textSize="16sp"
             android:textColor="@android:color/black"
             android:visibility="gone" />
@@ -262,7 +260,7 @@
             android:id="@+id/tvTituloUbicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Seleccionar ubicación"
+            android:text="@string/select_location"
             android:textSize="16sp"
             android:visibility="gone"
             android:textColor="@android:color/black" />
@@ -273,14 +271,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:visibility="gone"
-            android:text="Abrir Mapa para Seleccionar Ubicación" />
+            android:text="@string/select_location_button" />
 
 
         <!-- Descripción -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descripción"
+            android:text="@string/description"
             android:textSize="16sp"
             android:textColor="@android:color/black" />
 
@@ -299,7 +297,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Categorías"
+            android:text="@string/categories"
             android:textSize="16sp"
             android:textColor="@android:color/black" />
 
@@ -318,7 +316,7 @@
             android:id="@+id/btnRegistrarEvento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registrar Evento"
+            android:text="@string/register_event"
             android:layout_marginTop="16dp" />
 
 

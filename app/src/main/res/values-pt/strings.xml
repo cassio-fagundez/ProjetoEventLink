@@ -26,7 +26,6 @@
     <string name="button_save_changes">Salvar Alterações</string>
 
 
-
     <!-- EditText -->
     <string name="edittext_email">Endereço de e-mail</string>
     <string name="edittext_password">Senha</string>
@@ -56,14 +55,12 @@
     <string name="field_event_title">(*) TÍTULO DO EVENTO</string>
 
 
-
     <!-- Alertas -->
     <string name="email_required">E-mail necessário</string>
     <string name="password_required">Senha necessária</string>
     <string name="valid_email_required">É necessário um e-mail válido.</string>
     <string name="error_login_failed_email">Não existe uma conta com este email.</string>
     <string name="error_login_failed_password">A senha é inválida, por favor verifique.</string>
-
 
 
     <!-- Toast y Errores -->
@@ -95,10 +92,281 @@
     <string name="error_invalid_lastname">Por favor, insira um sobrenome válido sem números ou símbolos.</string>
     <string name="error_invalid_age">Você deve ter pelo menos 14 anos para se registrar.</string>
 
+    <!-- EventDetailsActivity -->
+    <string name="interested_count"> interessados</string>
+    <string name="no_longer_interested">Você não tem mais interesse neste evento.</string>
+    <string name="interested_event">Você está interessado neste evento!</string>
+    <string name="interest_update_error">Erro ao atualizar o interesse.</string>
+    <string name="report_event_title">Reportar Evento</string>
+    <string name="report_hint">Escreva o motivo do relatório: </string>
+    <string name="enter_reason_or_cancel">Por favor, insira um motivo ou cancele.</string>
+    <string name="event_id_not_found">ID do evento não encontrado.</string>
+    <string name="organizer_not_found">Organizador do evento não encontrado.</string>
+    <string name="organizer_document_missing">Documento do organizador não encontrado.</string>
+    <string name="report_success">Relatório enviado com sucesso.</string>
+    <string name="report_failure">Erro ao enviar o relatório.</string>
+    <string name="event_not_found">Evento não encontrado.</string>
+    <string name="search_event_error">Erro ao buscar o evento.</string>
+    <string name="cancel">Cancelar</string>
 
 
+    <!-- EventEditActivity -->
+    <string name="selectubication">Selecionar localização</string>">
+    <string name="selectedlocation">Ubicação selecionada</string>">
+    <string name="titulo_evento_requerido">Título do evento requerido</string>
+    <string name="fecha_inicio_requerida">Data de início requerida</string>
+    <string name="hora_inicio_requerida">Hora de início requerida</string>
+    <string name="descripcion_requerida">Descrição requerida</string>
+    <string name="categorias_requeridas">Categorias requeridas</string>
+    <string name="ubicacion_seleccionada">Localização selecionada: \n Lat: %1$s\nLon: %2$s</string>
+    <string name="evento_pasado_no_editable">Este evento pertence a uma data passada e não pode ser editado.</string>
+    <string name="evento_eliminado_con_exito">Evento excluído com sucesso</string>
+    <string name="error_eliminar_evento">Erro ao excluir o evento: %1$s</string>
+    <string name="evento_no_identificado">Não foi possível identificar o evento para excluir</string>
+    <string name="campos_obligatorios_vacios">Por favor, complete todos os campos obrigatórios</string>
+    <string name="confirmacion_eliminar_evento">Tem certeza de que deseja excluir este evento? Esta ação não pode ser desfeita.</string>
+    <string name="titulo_eliminar_evento">Excluir Evento</string>
+    <string name="eliminar">Excluir</string>
+
+    <!-- EventListActivity -->
+    <string name="error_al_cargar_eventos">Erro ao carregar eventos</string>
+
+    <!-- EventQuestionsActivity -->
+    <string name="event_data_error">Não foram recebidos dados do evento.</string>
+    <string name="question_button_visibility">Nova Pergunta</string>
+    <string name="ask_question_hint">Escreva sua pergunta</string>
+    <string name="enviar">Enviar</string>
+    <string name="contestar">Responder</string>
+    <string name="deletequestion">Eliminar Pergunta</string>
+    <string name="ask_question_invalid">Por favor, escreva uma pergunta válida.</string>
+    <string name="question_sent_success">Pergunta enviada com sucesso.</string>
+    <string name="question_sent_error">Erro ao enviar a pergunta.</string>
+    <string name="question_id_error">Erro ao gerar o ID da pergunta.</string>
+    <string name="load_questions_error">Erro ao carregar perguntas.</string>
+    <string name="answer_dialog_title">Responder à pergunta</string>
+    <string name="answer_hint">Escreva sua resposta</string>
+    <string name="answer_empty_error">A resposta não pode estar vazia.</string>
+    <string name="answer_updated_success">Resposta atualizada com sucesso.</string>
+    <string name="answer_updated_error">Erro ao atualizar a resposta.</string>
+    <string name="delete_question_success">Pergunta excluída com sucesso.</string>
+    <string name="delete_question_error">Erro ao excluir a pergunta.</string>
+    <string name="event_registration_error">Erro ao registrar evento</string>
 
 
+    <string name="no_user_data_found">Não foram encontrados dados do usuário.</string>
+    <string name="error_al_cargar_datos">Erro ao carregar dados:</string>
+    <string name="required_fields_missing">Por favor, preencha todos os campos obrigatórios.</string>
+    <string name="invalid_document">Documento inválido.</string>
+    <string name="document_already_registered">O documento já está registrado.</string>
+    <string name="data_updated_successfully">Dados atualizados com sucesso.</string>
+    <string name="general_error">Erro</string>
+    <string name="openemail">Abrir email</string>
+
+    <string name="document_required">É necessário ter um documento registrado para criar um evento.</string>
+    <string name="error_verifying_document">Erro ao verificar o documento.</string>
+    <string name="login_required">Por favor, faça login para registrar um evento.</string>
+    <string name="event_date">Data: </string>
+    <string name="event_time">Hora: </string>
+    <string name="error_loading_events">Erro ao carregar eventos: </string>
+
+
+    <string name="report">Report</string>
+    <string name="error_finding_organizer">Error finding the organizer.</string>
+    <string name="error_checking_interest">Error checking interest.</string>
+
+
+    <string name="btn_questions">Perguntas e Respostas</string>
+    <string name="title">Título</string>
+    <string name="start_date">Data de Início</string>
+    <string name="end_date">Data Final</string>
+    <string name="start_time">Hora de Início</string>
+    <string name="end_time">Hora Final</string>
+    <string name="description">Descrição</string>
+    <string name="in_person_address">Endereço Presencial</string>
+    <string name="virtual_url">URL Virtual</string>
+    <string name="categories">Categorias</string>
+    <string name="edit_event">Editar Evento</string>
+    <string name="report_event">Reportar Evento</string>
+
+
+    <string name="select_location_title">Selecionar localização</string>
+    <string name="select_location_button">Abrir mapa para selecionar localização</string>
+    <string name="save_event">Salvar alterações</string>
+    <string name="delete_event">Excluir evento</string>
+    <string name="clear_end_date">Limpar data de término</string>
+    <string name="clear_end_time">Limpar hora de término</string>
+
+    <string name="list_events_title">Lista de Eventos</string>
+    <string name="my_events">Meus Eventos</string>
+    <string name="other_events">Outros Eventos</string>
+
+    <string name="close">Fechar</string>
+
+
+    <string name="event_title">Título do Evento</string>
+    <string name="questions_title">Perguntas e Respostas</string>
+    <string name="new_question_button">Deixar uma nova pergunta</string>
+    <string name="no_questions_message">Ainda não há perguntas. Seja o primeiro a perguntar!</string>
+
+
+    <string name="terms_conditions_title">Termos e Condições de Uso</string>
+    <string name="privacy_policy_title">Política de Privacidade</string>
+
+    <string name="privacy_policy_text">
+        Última atualização: 01/12/2024
+
+        EventLink (daqui em diante, “nós”, “nosso” ou “EventLink”), com sede em Rivera, Rivera, Uruguai, é o proprietário e operador do aplicativo móvel EventLink (daqui em diante, o “Aplicativo”). Reconhecemos a importância de proteger a privacidade de nossos usuários e nos comprometemos a cumprir as leis e regulamentos aplicáveis à proteção de dados, incluindo a Lei N° 18.331 de Proteção de Dados Pessoais no Uruguai, assim como a Lei Nº 13.709, conhecida como Lei Geral de Proteção de Dados Pessoais (LGPD).
+
+        1. Consentimento
+        Ao se registrar no aplicativo EventLink, você aceita os termos desta Política de Privacidade e nos dá seu consentimento para coletar, usar e armazenar seus dados pessoais e as informações relacionadas aos eventos na nuvem, conforme descrito neste documento.
+
+        2. Informações que Coletamos
+        2.1. Dados Pessoais
+        Ao se registrar ou utilizar o aplicativo, coletamos apenas os dados necessários para seu funcionamento:
+        Primeiro Nome
+        Segundo Nome (opcional)
+        Sobrenome
+        Segundo Sobrenome (opcional)
+        Data de Nascimento
+        Gênero
+        Documento de Identidade (opcional)
+        E-mail
+        Senha (criptografada)
+
+        2.2. Dados dos Eventos
+        Caso crie ou interaja com eventos, coletamos e armazenamos informações relacionadas, como:
+        Título do evento
+        Descrição
+        Datas e horários
+        Endereço e Localização geográfica do evento (se aplicável)
+        Categorias do evento
+        URL de eventos virtuais (se aplicável)
+
+        Essas informações são armazenadas na nuvem para garantir o bom funcionamento do aplicativo e sua disponibilidade para os usuários interessados.
+
+        2.3. Dados de Uso
+        Para melhorar a experiência do usuário, armazenamos localmente em seu dispositivo dados como:
+        Preferências de idioma
+        Configurações personalizadas
+        Esses dados não são armazenados na nuvem.
+
+        3. Uso das Informações
+        Usamos as informações coletadas para:
+
+        - Fornecer acesso e funcionalidade no aplicativo.
+        - Centralizar a divulgação e o acesso aos eventos.
+        - Personalizar a experiência do usuário.
+        - Garantir o cumprimento de termos e condições.
+
+        Cumpriremos com solicitações de informações das autoridades competentes, de acordo com a legislação vigente no Uruguai e Brasil, caso receba uma ordem judicial ou outra solicitação legalmente vinculante.
+
+        4. Armazenamento e Segurança
+        4.1. Armazenamento de Dados
+        Os dados pessoais e dos eventos são armazenados em servidores Firebase, localizados nos Estados Unidos (região us-central1). O Firebase implementa altos padrões de segurança para proteger as informações.
+
+        5. Direitos do Usuário
+        De acordo com as leis de proteção de dados, especificamente a Lei N° 18.331 e a Lei Nº 13.709 para Uruguai e Brasil, respectivamente, você tem o direito de:
+        - Acessar seus dados pessoais armazenados.
+        - Retificar qualquer informação incorreta ou desatualizada.
+        - Solicitar a exclusão de seus dados pessoais, desde que não haja uma obrigação legal que o impeça.
+        Para exercer seus direitos, você pode entrar em contato conosco por meio do e-mail especificado ao final deste documento.
+
+        6. Atualizações e Alterações
+        Reservamo-nos o direito de atualizar esta Política de Privacidade periodicamente. Alterações significativas serão comunicadas através da publicação de uma versão atualizada no aplicativo.
+
+        7. Contato
+        Se você tiver dúvidas, preocupações ou deseja exercer seus direitos relacionados a esta política, pode entrar em contato conosco através do e-mail:
+        cassio.fagundez@estudiantes.utec.edu.uy
+
+        Obrigado por confiar no EventLink. Estamos comprometidos com a proteção da sua privacidade.
+
+        Atenciosamente,
+        Equipe EventLink
+    </string>
+
+    <string name="terms_conditions_text">
+    Última atualização: 01/12/2024
+
+    Bem-vindo ao EventLink. Ao utilizar este aplicativo móvel (doravante, "Aplicativo"), você aceita os Termos e Condições (doravante, os "Termos"). Recomendamos que leia atentamente antes de continuar. Se não concordar com estes Termos, não deve usar o Aplicativo.
+
+    1. Aceitação dos Termos
+    Ao baixar, registrar-se e/ou utilizar o Aplicativo, você confirma que:
+    - Tem mais de 18 anos ou possui permissão de um responsável legal para utilizar o EventLink.
+    - Fornecerá informações verídicas e atualizadas durante o registro e uso do Aplicativo.
+    - Cumprirá com as leis e regulamentos aplicáveis ao uso do Aplicativo.
+
+    2. Uso Permitido
+    O EventLink foi projetado exclusivamente para:
+    - Criar, explorar e interagir com eventos.
+    - Compartilhar informações relevantes sobre eventos com outros usuários.
+
+    É estritamente proibido:
+    - Publicar eventos que incluam conteúdo ilegal, ofensivo, discriminatório, fraudulento ou que violem direitos de terceiros.
+    - Usar o Aplicativo para fins diferentes dos previstos, como publicidade não autorizada ou atividades fraudulentas.
+    Reservamo-nos o direito de remover qualquer conteúdo ou suspender contas que descumpram essas disposições.
+
+    3. Responsabilidade do Usuário
+    Ao usar o Aplicativo, você é responsável por:
+    - O conteúdo que publica, incluindo descrições, imagens e localizações de eventos.
+    - Garantir que os eventos criados sejam reais, respeitem as leis e não violem direitos de terceiros.
+    - A segurança de suas credenciais de acesso. Qualquer atividade realizada a partir de sua conta será considerada de sua responsabilidade.
+
+    4. Conteúdo e Propriedade Intelectual
+    Todos os elementos de design, logotipos, marcas e funcionalidades do Aplicativo são propriedade do EventLink ou de seus licenciadores e estão protegidos por direitos autorais e leis de propriedade intelectual.
+
+    O conteúdo gerado pelos usuários (como descrições de eventos) continua sendo propriedade dos usuários, mas ao publicá-lo, concedem-nos uma licença não exclusiva para usá-lo dentro do Aplicativo.
+
+    5. Limitação de Responsabilidade
+    O EventLink não garante a precisão, integridade ou segurança das informações fornecidas por outros usuários. Não nos responsabilizamos por:
+    - Eventos cancelados, modificados ou que não atendam às expectativas do usuário.
+    - Danos ou perdas decorrentes do uso do Aplicativo.
+
+    6. Suspensão e Rescisão de Contas
+    Podemos suspender ou cancelar sua conta sem aviso prévio se:
+    - Descumprir estes Termos.
+    - Realizar atividades suspeitas, fraudulentas ou ilegais dentro do Aplicativo.
+
+    7. Modificações nos Termos
+    Reservamo-nos o direito de modificar estes Termos a qualquer momento. As atualizações serão notificadas dentro do Aplicativo. O uso contínuo do Aplicativo após essas modificações constituirá sua aceitação dos novos Termos.
+
+    8. Legislação Aplicável
+    Estes Termos são regidos pelas leis da República Oriental do Uruguai. Em caso de disputa, as partes se submetem à jurisdição dos tribunais competentes em Rivera, Uruguai.
+
+    9. Contato
+    Se tiver perguntas, dúvidas ou desejar reportar um problema relacionado ao uso do Aplicativo, pode nos contatar por meio do e-mail:
+    cassio.fagundez@estudiantes.utec.edu.uy
+</string>
+
+    <string name="privacy_policy_acceptance">Aceito a Política de Privacidade</string>
+    <string name="terms_conditions_acceptance">Aceito os Termos e Condições de Uso</string>
+
+
+    <string name="event_duration_question">O evento é de um dia ou vários dias?</string>
+    <string name="one_day">Um Dia</string>
+    <string name="multiple_days">Vários Dias</string>
+    <string name="date">Data</string>
+    <string name="end_time_question">Tem horário de término?</string>
+    <string name="no">Não</string>
+    <string name="yes">Sim</string>
+    <string name="time">Horário</string>
+    <string name="event_type">Tipo de Evento</string>
+    <string name="virtual_event">Virtual</string>
+    <string name="in_person_event">Presencial</string>
+    <string name="virtual_room_url">URL da Sala</string>
+    <string name="address">Endereço</string>
+    <string name="select_location">Selecionar localização</string>
+    <string name="open_map">Abrir Mapa para Selecionar Localização</string>
+    <string name="register_event">Registrar Evento</string>
+
+    <string name="confirm_location">Confirmar localização</string>
+
+    <string name="question">Pergunta</string>
+    <string name="answer">Resposta</string>
+
+    <string name="label_hoy">Hoje</string>
+    <string name="label_proximamente">Em breve</string>
+    <string name="label_finalizado">Finalizado</string>
+    <string name="label_sinestado">Sem estado</string>
 
 
 

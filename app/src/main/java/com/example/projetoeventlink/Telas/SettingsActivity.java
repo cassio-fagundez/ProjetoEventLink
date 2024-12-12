@@ -41,5 +41,15 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(new Intent(SettingsActivity.this, SettingsProfileActivity.class));
             }
         });
+
+        // Botón Idiomas
+        Button buttonLanguage = findViewById(R.id.btnLanguages);
+        buttonLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí inicia la actividad de Bienvenida
+                startActivity(new Intent(SettingsActivity.this, SettingsLanguageActivity.class));
+            }
+        });
     }
 }

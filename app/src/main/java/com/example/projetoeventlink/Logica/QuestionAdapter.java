@@ -44,14 +44,15 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
         String question = parts[0]; // La pregunta
         String answer = parts.length > 1 ? parts[1] : ""; // Respuesta (puede estar vacía)
 
-        holder.tvQuestion.setText("Pregunta: " + question);
+        holder.tvQuestion.setText(context.getString(R.string.question) + ": " + question);
 
         if (!answer.isEmpty()) {
-            holder.tvAnswer.setText("Respuesta: " + answer);
+            holder.tvAnswer.setText(context.getString(R.string.answer) + ": " + answer);
             holder.tvAnswer.setVisibility(View.VISIBLE);
         } else {
             holder.tvAnswer.setVisibility(View.GONE);
         }
+
 
         if (isOwner) {
             holder.itemView.setOnClickListener(v -> {

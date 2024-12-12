@@ -168,14 +168,14 @@ public class WelcomeActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             } else {
-                                Toast.makeText(getApplicationContext(), "Debe tener un documento registrado para crear un evento.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.document_required), Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(getApplicationContext(), "Error al verificar el documento.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), getString(R.string.error_verifying_document), Toast.LENGTH_SHORT).show();
                         }
                     });
                 } else {
-                    Toast.makeText(getApplicationContext(), "Por favor, inicie sesión para registrar un evento.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.login_required), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -213,7 +213,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 }
 
                 // Configurar el adaptador y filtrar los eventos
-                EventAdapter eventAdapter = new EventAdapter(listaDeEventos);
+                EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), listaDeEventos);
                 List<Evento> filteredEvents = eventAdapter.getFilteredEventsForMap();
 
                 // Añadir los marcadores al mapa
@@ -226,15 +226,15 @@ public class WelcomeActivity extends AppCompatActivity {
 
                         marker.setSnippet(event.getDescripcion());
 
-                        String datosEvento = "Fecha: ";
+                        String datosEvento = getString(R.string.event_date);
                         if(event.getFechaFinal() != null && !event.getFechaFinal().isEmpty()){
                             datosEvento = datosEvento + event.getFechaInicio()+ " - " + event.getFechaFinal();
                         } else { datosEvento = datosEvento + event.getFechaInicio(); }
 
                         if(event.getHoraFinal() != null && !event.getHoraFinal().isEmpty()){
-                            datosEvento = datosEvento + "\n" + "Hora: " + event.getHoraInicio() + " - " + event.getHoraFinal();
+                            datosEvento = datosEvento + "\n" + getString(R.string.event_time) + event.getHoraInicio() + " - " + event.getHoraFinal();
                         } else {
-                            datosEvento = datosEvento + "\n" + "Hora: " + event.getHoraInicio();
+                            datosEvento = datosEvento + "\n" + getString(R.string.event_time) + event.getHoraInicio();
                         }
 
                         marker.setSubDescription(datosEvento);
@@ -274,7 +274,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(WelcomeActivity.this, "Error al cargar eventos: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(WelcomeActivity.this, getString(R.string.error_loading_events) + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

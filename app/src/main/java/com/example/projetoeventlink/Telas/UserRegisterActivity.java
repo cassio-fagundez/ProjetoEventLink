@@ -10,6 +10,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -34,10 +36,11 @@ import java.util.Calendar;
 public class UserRegisterActivity extends AppCompatActivity {
 
     private EditText etFirstName, etSecondName, etFirstLastName, etSecondLastName, etEmail, etPassword, etDateOfBirth;
-    private TextView tvPasswordMistake;
+    private TextView tvPasswordMistake, tvCBConsentimientoDatos, tvCBTerminosCondiciones;
     private RadioButton rbtnSelected;
     private RadioGroup rgGender;
     private Button btnRegister;
+    private CheckBox cbConsentimientoDatos, cbTerminosCondiciones;
     private static final String TAG = "LOGSignUpActivity";
 
 
@@ -54,12 +57,43 @@ public class UserRegisterActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         etDateOfBirth = findViewById(R.id.etDateOfBirth);
+        cbConsentimientoDatos = findViewById(R.id.cbConsentimientoDatos);
+        cbTerminosCondiciones = findViewById(R.id.cbTerminosCondiciones);
+        tvCBConsentimientoDatos = findViewById(R.id.tvCBConsentimientoDatos);
+        tvCBTerminosCondiciones = findViewById(R.id.tvCBTerminosCondiciones);
         etDateOfBirth.setOnClickListener(v -> showDatePickerDialog());
 
         // Inicialización de RadioGroup y TextView
         tvPasswordMistake = findViewById(R.id.tvPasswordMistake);
         rgGender = findViewById(R.id.rgGender);
         rgGender.clearCheck();
+
+        // Revisar checkboxes
+        cbTerminosCondiciones.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                updateRegisterButtonState(); // Llamar a la función para actualizar el estado del botón
+            }
+        });
+
+        cbConsentimientoDatos.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                updateRegisterButtonState(); // Llamar a la función para actualizar el estado del botón
+            }
+        });
+
+        // Click listener para el texto de los CheckBox
+        tvCBTerminosCondiciones.setOnClickListener(v -> {
+            // Mostrar el diálogo con 'true' porque es Términos y Condiciones
+            showTermsDialog(false);
+        });
+
+        tvCBConsentimientoDatos.setOnClickListener(v -> {
+            // Mostrar el diálogo con 'false' porque es Política de Privacidad
+            showTermsDialog(true);
+        });
+
 
 
 
@@ -80,6 +114,7 @@ public class UserRegisterActivity extends AppCompatActivity {
                     Toast.makeText(UserRegisterActivity.this, getString(R.string.toast_completeall), Toast.LENGTH_SHORT).show();
                     return; // Salir del método para evitar procesamiento adicional
                 }
+
 
                 int selectedGenderId = rgGender.getCheckedRadioButtonId();
 
@@ -251,6 +286,21 @@ public class UserRegisterActivity extends AppCompatActivity {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
+    private void updateRegisterButtonState() {
+        // Si ambos CheckBox están marcados, habilitar el botón
+        if (cbTerminosCondiciones.isChecked() && cbConsentimientoDatos.isChecked()) {
+            btnRegister.setEnabled(true); // Habilitar el botón
+        } else {
+            btnRegister.setEnabled(false); // Deshabilitar el botón
+        }
+    }
+
+
+    // Método para mostrar el DialogFragment
+    private void showTermsDialog(boolean isTerms) {
+        TermsDialogFragment dialogFragment = TermsDialogFragment.newInstance(isTerms);
+        dialogFragment.show(getSupportFragmentManager(), "TermsDialog");
+    }
 
 
 

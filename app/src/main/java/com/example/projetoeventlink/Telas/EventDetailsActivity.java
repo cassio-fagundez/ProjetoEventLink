@@ -2,6 +2,7 @@ package com.example.projetoeventlink.Telas;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,12 +26,13 @@ import com.google.firebase.database.ValueEventListener;
 
 public class EventDetailsActivity extends AppCompatActivity {
 
-    private TextView tvTitulo, tvFechaInicio, tvFechaFinal, tvHoraInicio, tvHoraFinal, tvDescripcion, tvDireccion, tvURL, tvCategorias;
+    private TextView tvTitulo, tvFechaInicio, tvFechaFinal, tvHoraInicio, tvHoraFinal, tvDescripcion, tvDireccion, tvURL, tvCategorias, tvInteresados;
     private ImageView ivEventImage;
     private ImageButton btnLike;
     private Button btnEditar, btnReportar, btnPreguntas;
     private DatabaseReference eventRef;
 
+    private int cont_interested;
     private boolean OWNER = false;
 
     @Override
@@ -53,6 +55,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         btnReportar = findViewById(R.id.btnReportar);
         btnLike = findViewById(R.id.btnLike);
         btnPreguntas = findViewById(R.id.btnPreguntas);
+        tvInteresados = findViewById(R.id.tvInteresados);
 
         // Obtener datos del Intent
         Intent intent = getIntent();
@@ -70,8 +73,10 @@ public class EventDetailsActivity extends AppCompatActivity {
         double latitud = intent.getDoubleExtra("latitud", 0.0);
         double longitud = intent.getDoubleExtra("longitud", 0.0);
 
+        checkUserInterestStatus(eventID);
 
         // Setear los valores en los campos
+        tvInteresados.setText(cont_interested + getString(R.string.interested_count));
         tvTitulo.setText(titulo);
         tvFechaInicio.setText(fechaInicio);
         tvFechaFinal.setText(fechaFinal);
@@ -109,6 +114,52 @@ public class EventDetailsActivity extends AppCompatActivity {
             }
         });
 
+        // Listener para el botón de "Like"
+        btnLike.setOnClickListener(v -> {
+
+            eventRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        DataSnapshot interestedBySnapshot = snapshot.child("InterestedBy");
+                        int interestedCount = snapshot.hasChild("Interested") ? snapshot.child("Interested").getValue(Integer.class) : 0;
+
+                        if (interestedBySnapshot.hasChild(currentUserId)) {
+                            // Si el usuario ya dio like, lo quitamos
+                            eventRef.child("InterestedBy").child(currentUserId).removeValue();
+                            eventRef.child("Interested").setValue(Math.max(0, interestedCount - 1));
+                            cont_interested--;
+                            tvInteresados.setText(cont_interested +" "+ getString(R.string.interested_count));
+                            btnLike.setBackgroundResource(R.drawable.likeline); // Cambiar a ícono no interesado.
+                            Toast.makeText(EventDetailsActivity.this, getString(R.string.no_longer_interested), Toast.LENGTH_SHORT).show();
+                        } else {
+                            // Si el usuario no dio like, lo agregamos
+                            eventRef.child("InterestedBy").child(currentUserId).setValue(true);
+                            eventRef.child("Interested").setValue(interestedCount + 1);
+                            cont_interested++;
+                            tvInteresados.setText(cont_interested +" "+ getString(R.string.interested_count));
+                            btnLike.setBackgroundResource(R.drawable.likefull); // Cambiar a ícono interesado.
+                            Toast.makeText(EventDetailsActivity.this, getString(R.string.interested_event), Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        // Si el nodo no existe, lo inicializamos
+                        eventRef.child("InterestedBy").child(currentUserId).setValue(true);
+                        eventRef.child("Interested").setValue(1);
+                        cont_interested=1;
+                        tvInteresados.setText(cont_interested +" "+ getString(R.string.interested_count));
+                        btnLike.setBackgroundResource(R.drawable.likefull); // Cambiar a ícono "me gusta"
+                        Toast.makeText(EventDetailsActivity.this, getString(R.string.interested_event), Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    Toast.makeText(EventDetailsActivity.this, getString(R.string.interest_update_error), Toast.LENGTH_SHORT).show();
+                }
+            });
+        });
+
+
         //Listener para Preguntas y Respuestas
         btnPreguntas.setOnClickListener(v -> {
             Intent intent1 = new Intent(EventDetailsActivity.this, EventQuestionsActivity.class);
@@ -142,26 +193,26 @@ public class EventDetailsActivity extends AppCompatActivity {
         btnReportar.setOnClickListener(v -> {
             // Crear un AlertDialog para ingresar el motivo del reporte
             AlertDialog.Builder builder = new AlertDialog.Builder(EventDetailsActivity.this);
-            builder.setTitle("Reportar Evento");
+            builder.setTitle(getString(R.string.report_event_title));
 
             // Crear un EditText para escribir el motivo
             final EditText input = new EditText(EventDetailsActivity.this);
-            input.setHint("Escribe el motivo del reporte: ");
+            input.setHint(getString(R.string.report_hint));
             builder.setView(input);
 
             // Botón para confirmar el reporte
-            builder.setPositiveButton("Reportar", (dialog, which) -> {
+            builder.setPositiveButton(getString(R.string.report), (dialog, which) -> {
                 String motivoReporte = input.getText().toString().trim();
 
                 if (motivoReporte.isEmpty()) {
-                    Toast.makeText(EventDetailsActivity.this, "Por favor, ingresa un motivo o cancela.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EventDetailsActivity.this, getString(R.string.enter_reason_or_cancel), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 String eventoID = intent.getStringExtra("eventId");
 
                 if (eventoID == null || eventoID.isEmpty()) {
-                    Toast.makeText(EventDetailsActivity.this, "No se encontró el ID del evento.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EventDetailsActivity.this, getString(R.string.event_id_not_found), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -171,7 +222,7 @@ public class EventDetailsActivity extends AppCompatActivity {
                     if (eventoSnapshot.exists()) {
 
                         if (organizadorUID == null || organizadorUID.isEmpty()) {
-                            Toast.makeText(EventDetailsActivity.this, "No se encontró el organizador del evento.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EventDetailsActivity.this, getString(R.string.organizer_not_found), Toast.LENGTH_SHORT).show();
                             return;
                         }
 
@@ -195,33 +246,85 @@ public class EventDetailsActivity extends AppCompatActivity {
                                 DatabaseReference reportesRef = FirebaseDatabase.getInstance().getReference("Reports");
                                 reportesRef.child(reporteID).setValue(reporte)
                                         .addOnSuccessListener(aVoid -> {
-                                            Toast.makeText(EventDetailsActivity.this, "Reporte enviado exitosamente.", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(EventDetailsActivity.this, getString(R.string.report_success), Toast.LENGTH_SHORT).show();
                                         })
                                         .addOnFailureListener(e -> {
-                                            Toast.makeText(EventDetailsActivity.this, "Error al enviar el reporte.", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(EventDetailsActivity.this, getString(R.string.report_failure), Toast.LENGTH_SHORT).show();
                                         });
 
                             } else {
-                                Toast.makeText(EventDetailsActivity.this, "No se encontró al organizador.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(EventDetailsActivity.this, getString(R.string.organizer_not_found), Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(e -> {
-                            Toast.makeText(EventDetailsActivity.this, "Error al buscar al organizador.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EventDetailsActivity.this, getString(R.string.error_finding_organizer), Toast.LENGTH_SHORT).show();
                         });
 
                     } else {
-                        Toast.makeText(EventDetailsActivity.this, "No se encontró el evento.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EventDetailsActivity.this, getString(R.string.event_not_found), Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(e -> {
-                    Toast.makeText(EventDetailsActivity.this, "Error al buscar el evento.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EventDetailsActivity.this, getString(R.string.search_event_error), Toast.LENGTH_SHORT).show();
                 });
             });
 
             // Botón para cancelar
-            builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
+            builder.setNegativeButton(getString(R.string.cancel), (dialog, which) -> dialog.dismiss());
 
             // Mostrar el cuadro de diálogo
             builder.show();
         });
 
     }
+
+    private void checkUserInterestStatus(String eventID) {
+        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        // Referencia al nodo de evento específico en Firebase
+        DatabaseReference eventRef = FirebaseDatabase.getInstance().getReference("Events").child(eventID);
+
+        // Verificar si el usuario está interesado
+        eventRef.child("InterestedBy").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (snapshot.hasChild(currentUserId)) {
+                    // El usuario está interesado
+                    btnLike.setBackgroundResource(R.drawable.likefull); // Cambia a ícono "like"
+                } else {
+                    // El usuario no está interesado
+                    btnLike.setBackgroundResource(R.drawable.likeline); // Cambia a ícono "likeline"
+                }
+
+                // Verificar si existe el valor "Interesados" y actualizarlo
+                eventRef.child("Interested").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            // Si existe, tomar su valor y guardarlo en la variable global
+                            cont_interested = dataSnapshot.getValue(Integer.class);
+                        } else {
+                            // Si no existe, inicializarlo a 0
+                            eventRef.child("Interested").setValue(0);
+                            cont_interested = 0;
+                        }
+
+                        // Actualizar la UI después de obtener el valor correcto de "Interested"
+                        tvInteresados.setText(cont_interested +" "+ getString(R.string.interested_count));
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.w("Error", "Error al leer el valor de 'Interesados': ", databaseError.toException());
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Toast.makeText(EventDetailsActivity.this, getString(R.string.error_checking_interest), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+
 }

@@ -48,7 +48,7 @@ public class EventQuestionsActivity extends AppCompatActivity {
         OWNER = getIntent().getBooleanExtra("Owner", false);
 
         if (TextUtils.isEmpty(eventID) || TextUtils.isEmpty(eventTitle)) {
-            Toast.makeText(this, "No se recibieron datos del evento.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.event_data_error), Toast.LENGTH_SHORT).show();
             finish();
             return;
         }
@@ -78,19 +78,19 @@ public class EventQuestionsActivity extends AppCompatActivity {
 
     private void showAskQuestionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Nueva Pregunta");
+        builder.setTitle(getString(R.string.question_button_visibility));
 
         // Crear un EditText para ingresar la pregunta
         final EditText input = new EditText(this);
-        input.setHint("Escribe tu pregunta");
+        input.setHint(getString(R.string.ask_question_hint));
         builder.setView(input);
 
         // Botón para confirmar
-        builder.setPositiveButton("Enviar", (dialog, which) -> {
+        builder.setPositiveButton(getString(R.string.enviar), (dialog, which) -> {
             String question = input.getText().toString().trim();
 
             if (TextUtils.isEmpty(question)) {
-                Toast.makeText(this, "Por favor, escribe una pregunta válida.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.ask_question_invalid), Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -98,7 +98,7 @@ public class EventQuestionsActivity extends AppCompatActivity {
         });
 
         // Botón para cancelar
-        builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
+        builder.setNegativeButton(getString(R.string.cancel), (dialog, which) -> dialog.dismiss());
 
         builder.show();
     }
@@ -116,14 +116,14 @@ public class EventQuestionsActivity extends AppCompatActivity {
             // Guardar la pregunta en la base de datos bajo la nueva estructura
             questionsRef.child(questionID).setValue(questionMap)
                     .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(this, "Pregunta enviada exitosamente.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.question_sent_success), Toast.LENGTH_SHORT).show();
                         // Agregar el mapa a la lista de preguntas
                         questionsList.add(questionMap);
                         questionsAdapter.notifyDataSetChanged();
                     })
-                    .addOnFailureListener(e -> Toast.makeText(this, "Error al enviar la pregunta.", Toast.LENGTH_SHORT).show());
+                    .addOnFailureListener(e -> Toast.makeText(this, getString(R.string.question_sent_error), Toast.LENGTH_SHORT).show());
         } else {
-            Toast.makeText(this, "Error al generar el ID de la pregunta.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.question_id_error), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -143,7 +143,7 @@ public class EventQuestionsActivity extends AppCompatActivity {
                 }
             }
             questionsAdapter.notifyDataSetChanged();
-        }).addOnFailureListener(e -> Toast.makeText(this, "Error al cargar preguntas.", Toast.LENGTH_SHORT).show());
+        }).addOnFailureListener(e -> Toast.makeText(this, getString(R.string.load_questions_error), Toast.LENGTH_SHORT).show());
     }
 
 
@@ -151,31 +151,31 @@ public class EventQuestionsActivity extends AppCompatActivity {
     // Método para mostrar el diálogo de respuesta
     public void showAnswerDialog(int position, String question, String currentAnswer) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Responder a la pregunta");
+        builder.setTitle(getString(R.string.answer_dialog_title));
 
         // Crear el layout del diálogo
         final EditText input = new EditText(this);
-        input.setHint("Escribe tu respuesta");
+        input.setHint(getString(R.string.answer_hint));
         input.setText(currentAnswer); // Mostrar la respuesta actual si existe
         builder.setView(input);
 
         // Botón para confirmar la respuesta
-        builder.setPositiveButton("Contestar", (dialog, which) -> {
+        builder.setPositiveButton(getString(R.string.contestar), (dialog, which) -> {
             String newAnswer = input.getText().toString().trim();
             if (TextUtils.isEmpty(newAnswer)) {
-                Toast.makeText(this, "La respuesta no puede estar vacía.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.answer_empty_error), Toast.LENGTH_SHORT).show();
                 return;
             }
             updateAnswerInDatabase(position, newAnswer);
         });
 
         // Botón para eliminar la pregunta
-        builder.setNeutralButton("Eliminar Pregunta", (dialog, which) -> {
+        builder.setNeutralButton(getString(R.string.deletequestion), (dialog, which) -> {
             deleteQuestionFromDatabase(position);
         });
 
         // Botón para cancelar
-        builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
+        builder.setNegativeButton(getString(R.string.cancel), (dialog, which) -> dialog.dismiss());
 
         builder.show();
     }
@@ -195,12 +195,12 @@ public class EventQuestionsActivity extends AppCompatActivity {
             // Actualizar en la base de datos
             questionsRef.child(questionID).setValue(updatedQuestionMap)
                     .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(this, "Respuesta actualizada exitosamente.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.answer_updated_success), Toast.LENGTH_SHORT).show();
                         // Actualizar la lista de preguntas con el nuevo mapa
                         questionsList.set(position, updatedQuestionMap);
                         questionsAdapter.notifyItemChanged(position);
                     })
-                    .addOnFailureListener(e -> Toast.makeText(this, "Error al actualizar la respuesta.", Toast.LENGTH_SHORT).show());
+                    .addOnFailureListener(e -> Toast.makeText(this, getString(R.string.answer_updated_error), Toast.LENGTH_SHORT).show());
         }
     }
 
@@ -211,11 +211,11 @@ public class EventQuestionsActivity extends AppCompatActivity {
         if (questionID != null) {
             questionsRef.child(questionID).removeValue()
                     .addOnSuccessListener(aVoid -> {
-                        Toast.makeText(this, "Pregunta eliminada exitosamente.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.delete_question_success), Toast.LENGTH_SHORT).show();
                         questionsList.remove(position);
                         questionsAdapter.notifyItemRemoved(position);
                     })
-                    .addOnFailureListener(e -> Toast.makeText(this, "Error al eliminar la pregunta.", Toast.LENGTH_SHORT).show());
+                    .addOnFailureListener(e -> Toast.makeText(this, getString(R.string.delete_question_error), Toast.LENGTH_SHORT).show());
         }
     }
 
